@@ -1,0 +1,148 @@
+@font-face {
+    font-family: 'Material Icons';
+    font-style:normal;
+    font-weight:400;
+    src:
+        url(fonts/material-icons.svg) format('svg'),
+        url(fonts/material-icons.woff) format('woff'),
+        url(fonts/material-icons.ttf) format('truetype');
+    }
+
+    .material-icons {
+        font-family: 'Material Icons';
+        vertical-align: middle;
+        font-weight:400;
+        font-style:normal;
+        font-size:24px;
+        display:inline-block;
+        line-height:1;
+        text-transform:none;
+        letter-spacing:normal;
+        word-wrap:normal;
+        white-space:nowrap;
+        direction:ltr;
+        -webkit-font-smoothing:antialiased;
+        text-rendering:optimizeLegibility;
+        -moz-osx-font-smoothing:grayscale;
+        font-feature-settings:'liga'
+      }
+li {
+    display: inline;
+    margin-left: 10px;
+  }
+  
+  nav {
+    font-family: 'montserrat';
+    background: #fff;
+    font-size: 14px;
+    color: rgba(31, 32, 65, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    height: 70px;
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  }
+  
+  #menu {
+    display: flex;
+    align-items: center;
+  }
+
+  #menu p {
+    margin-left: 41px;
+  }
+  
+  button {
+    font-size: 12px;
+    outline: none;
+    text-transform: uppercase;
+    border-radius: 22px;
+    height: 34px;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+  
+  #login {
+    width: 87px;
+    background: #fff;
+    border: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border: solid;
+    color: #BC9CFF;
+  }
+  
+  #reg {
+    border: none;
+    width: 196px;
+    color: #fff;
+    background: linear-gradient(180deg, #BC9CFF, #8BA4F9);
+  }
+  
+  #logo svg {
+    margin-left: 12.5px;
+    vertical-align: middle;
+    color: #1F2041;
+  }
+
+  nav b {
+    color: rgba(31, 32, 65, 0.75);
+  }
+
+footer {
+    font-family: 'montserrat';
+    background-color: #fff;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    color: rgba(31, 32, 65, 0.75);
+}
+
+.false {
+    text-align: center;
+    max-width: 768px;
+    max-height: 367px;
+    padding: 120px 140px;
+    box-sizing: border-box;
+}
+
+.false #contacts svg {
+    margin-left: 20px;
+}
+
+.true {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 140px;
+}
+
+.true #contacts {
+    border: solid;
+    vertical-align: middle;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background: #E5E5E5;
+    margin: 140px 0;
+}
+
+nav {
+    margin-bottom: 40px;
+}
+
+footer {
+    margin: auto;
+}
+@font-face {
+    font-family: 'quicksand';
+    src:
+        url(fonts/quicksand.svg) format('svg'),
+        url(fonts/quicksand.woff) format('woff'),
+        url(fonts/quicksand.ttf) format('truetype');
+    }
+@font-face {
+    font-family: 'montserrat';
+    src:
+        url(fonts/montserrat.svg) format('svg'),
+        url(fonts/montserrat.woff) format('woff'),
+        url(fonts/montserrat.ttf) format('truetype');
+    }
+

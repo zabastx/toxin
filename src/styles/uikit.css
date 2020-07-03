@@ -1,0 +1,17 @@
+@import '../blocks/header/header.css';
+@import '../blocks/footer/footer.css';
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: #E5E5E5;
+    margin: 140px 0;
+}
+
+nav {
+    margin-bottom: 40px;
+}
+
+footer {
+    margin: auto;
+}

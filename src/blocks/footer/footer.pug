@@ -1,0 +1,18 @@
+mixin footer(type)
+    if (!type)
+        footer.false
+            #logo
+                include logo.svg
+                include toxin.svg
+            p Copyright © 2018 Toxin отель. Все права зачищены.
+            #contacts
+                include twitter.svg
+                include fb.svg
+                include insta.svg
+    else
+        footer.true
+            p Copyright © 2018 Toxin отель. Все права зачищены.
+            #contacts
+                include twitter.svg
+                include fb.svg
+                include insta.svg

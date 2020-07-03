@@ -1,0 +1,63 @@
+@import '../../fonts/material-icons/mi.css';
+
+  li {
+    display: inline;
+    margin-left: 10px;
+  }
+  
+  nav {
+    font-family: 'montserrat';
+    background: #fff;
+    font-size: 14px;
+    color: rgba(31, 32, 65, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    height: 70px;
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  }
+  
+  #menu {
+    display: flex;
+    align-items: center;
+  }
+
+  #menu p {
+    margin-left: 41px;
+  }
+  
+  button {
+    font-size: 12px;
+    outline: none;
+    text-transform: uppercase;
+    border-radius: 22px;
+    height: 34px;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+  
+  #login {
+    width: 87px;
+    background: #fff;
+    border: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border: solid;
+    color: #BC9CFF;
+  }
+  
+  #reg {
+    border: none;
+    width: 196px;
+    color: #fff;
+    background: linear-gradient(180deg, #BC9CFF, #8BA4F9);
+  }
+  
+  #logo svg {
+    margin-left: 12.5px;
+    vertical-align: middle;
+    color: #1F2041;
+  }
+
+  nav b {
+    color: rgba(31, 32, 65, 0.75);
+  }

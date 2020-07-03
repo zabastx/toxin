@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'montserrat';
+    src:
+        url('montserrat.svg') format('svg'),
+        url('montserrat.woff') format('woff'),
+        url('montserrat.ttf') format('truetype');
+    }

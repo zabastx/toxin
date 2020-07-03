@@ -1,0 +1,19 @@
+mixin header(type)
+    nav
+        #logo
+            include logo.svg
+            include toxin.svg
+        #menu
+            ul
+                li <b>О нас</b>
+                li Услуги
+                    span.material-icons keyboard_arrow_down
+                li Вакансии
+                li Новости
+                li Соглашения
+                    span.material-icons keyboard_arrow_down
+            if type
+                p Julius Ceasar
+            else
+                button#login Войти
+                button#reg Зарегистрироваться

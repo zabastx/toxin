@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'quicksand';
+    src:
+        url('quicksand.svg') format('svg'),
+        url('quicksand.woff') format('woff'),
+        url('quicksand.ttf') format('truetype');
+    }
