@@ -33,7 +33,7 @@ const config = {
         use: ['pug-loader']
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|svg)$/i,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
@@ -45,7 +45,7 @@ const config = {
         use: [{
           loader: MiniCssExtractPlugin.loader,
           options: {
-            name: '[name].[ext]',
+            name: '[name].css',
             outputPath: 'styles',
           }
         }, 'css-loader',

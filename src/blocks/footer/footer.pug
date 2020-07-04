@@ -11,8 +11,39 @@ mixin footer(type)
                 include insta.svg
     else
         footer.true
-            p Copyright © 2018 Toxin отель. Все права зачищены.
-            #contacts
-                include twitter.svg
-                include fb.svg
-                include insta.svg
+            #upper
+                .footer-block
+                    #logo
+                        include logo.svg
+                        include toxin.svg
+                    p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+                .footer-list
+                    ul Навигация
+                        li О нас
+                        li Новости
+                        li Служба поддержки
+                        li Услуги
+                .footer-list
+                    ul О нас
+                        li О сервисе
+                        li Наша команда
+                        li Вакансии
+                        li Инвесторы
+                .footer-list
+                    ul Служба поддержки
+                        li Соглашения
+                        li Сообщества
+                        li Связь с нами
+                .footer-block
+                    h2 Подписка
+                    p Получайте специальные предложения и новости сервиса
+                    #submit-email
+                        input(type="email", name="sub", placeholder='Email')
+                        submit arrow_forward
+
+            #lower
+                p Copyright © 2018 Toxin отель. Все права зачищены.
+                #contacts
+                    include twitter.svg
+                    include fb.svg
+                    include insta.svg

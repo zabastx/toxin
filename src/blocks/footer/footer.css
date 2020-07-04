@@ -3,6 +3,8 @@ footer {
     background-color: #fff;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     color: rgba(31, 32, 65, 0.75);
+    font-size: 14px;
+    line-height: 17px;
 }
 
 .false {
@@ -13,17 +15,79 @@ footer {
     box-sizing: border-box;
 }
 
-.false #contacts svg {
+#contacts svg {
     margin-left: 20px;
+    height: 100%;
 }
 
-.true {
+.true #lower {
     display: flex;
     justify-content: space-between;
     padding: 0 140px;
 }
 
-.true #contacts {
-    border: solid;
+.true #lower #contacts {
     vertical-align: middle;
+}
+
+.true #upper {
+    box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+}
+
+footer #upper {
+    height: 372px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.footer-block {
+    width: 260px;
+    border: solid;
+}
+
+.footer-list {
+    border: solid;
+}
+
+.footer-list ul {
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+.footer-list li {
+    font-weight: normal;
+    display: block;
+    list-style-position: outside;
+    margin: 20px 0;
+}   
+
+.footer-block, .footer-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#submit-email {
+    display: flex;
+    align-items: stretch;
+    margin: 0;
+    height: 44px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: rgba(31, 32, 65, 0.25);
+}
+
+#submit-email submit {
+    font-family: 'Material icons';
+    color: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    font-size: 24px;
+    line-height: 24px;
+    margin: 0;
+}
+
+#submit-email input {
+    border: none;
 }
