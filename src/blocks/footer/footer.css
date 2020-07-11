@@ -39,28 +39,40 @@ footer #upper {
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
+    padding-right: 140px;
+    padding-left: 140px;
+    color: rgba(31, 32, 65, 0.5);
 }
 
 .footer-block {
     width: 260px;
-    border: solid;
 }
 
-.footer-list {
-    border: solid;
+.footer-block p {
+    margin-top: 20px;
 }
 
-.footer-list ul {
+.footer-block, .footer-list {
+    margin-top: 100px;
+}
+
+#upper h2 {
     padding: 0;
     margin: 0;
     font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    font-family: 'montserrat';
+    color: #1F2041;
+    text-transform: uppercase;
 }
 
-.footer-list li {
+#upper li {
+    font-size: 14px;
     font-weight: normal;
     display: block;
-    list-style-position: outside;
-    margin: 20px 0;
+    margin-top: 20px;
+    margin-left: 0;
 }   
 
 .footer-block, .footer-list {

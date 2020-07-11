@@ -1,0 +1,28 @@
+#colors-type
+    #colors
+            - var list = [1, 0.75, 0.50, 0.25, 0.05]
+            each item in list
+                .color-example
+                    div(class=`shade${item*100}`)
+                    div
+                        h2 Dark Shade !{item*100}%
+                        p #1F2041
+            .color-example
+                #color-purple
+                div
+                    h2 Purple
+                    p #BC9CFF
+            .color-example
+                #color-green
+                div
+                    h2 Green
+                    p #6FCF97
+    #type
+        h1.text-tag H1
+        h1.quicksand This one is the sub-section or<br>widget title
+        h2.text-tag H2
+        h2.quicksand Next one is the item title inside<br>widgets
+        h3.text-tag H3
+        h3 This is a label or CTA text
+        p.text-tag body
+        p This is the body text which is used for most<br>of the design, like paragraphs, lists, etc.

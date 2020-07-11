@@ -6,11 +6,13 @@ html(lang="ru")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet", href="styles/uikit.css")
         title UI kit
     body
+        #colors-type
+            include ./blocks/colors/colors.pug
         #headers-footers
             +header(false)
             +header(true)
             +footer(true)
             +footer(false)
+        
