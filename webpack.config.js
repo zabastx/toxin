@@ -6,12 +6,17 @@ const path = require('path');
 const config = {
   context: path.resolve(__dirname, 'src'),
   entry: {
-    index: './index.js'
+    index: './js/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: "[name].js",
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+         },
+       },
   devServer: {
     port: 3000,
   },
@@ -33,22 +38,22 @@ const config = {
         use: ['pug-loader']
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]',
-          outputPath: 'img',
+          name: 'img/[name].[ext]',
         }
       },
       {
-        test: /\.css$/i,
-        use: [{
+        test: /\.(css)|(scss)$/i,
+        use: [
+          'style-loader',
+          {
           loader: MiniCssExtractPlugin.loader,
           options: {
             name: '[name].css',
-            outputPath: 'styles',
           }
-        }, 'css-loader',
+        }, 'css-loader', 'sass-loader'
       ],
       },
       {
