@@ -84,22 +84,32 @@ footer #upper {
 #submit-email {
     display: flex;
     align-items: stretch;
+    justify-content: space-between;
     margin: 0;
+    margin-top: 20px;
     height: 44px;
     border: 1px solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
     border-radius: 4px;
-    color: rgba(31, 32, 65, 0.25);
+    padding: 0;
 }
 
 #submit-email submit {
     font-family: 'Material icons';
-    color: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     font-size: 24px;
-    line-height: 24px;
+    line-height: 44px;
+    color: #BC9CFF;
+    width: 44px;
+    text-align: center;
     margin: 0;
 }
 
 #submit-email input {
     border: none;
+    padding-left: 15px;
+    width: 100%;
+}
+
+#submit-email input::placeholder {
+    color: rgba(31, 32, 65, 0.25);
 }
