@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -21,6 +22,12 @@ const config = {
     port: 3000,
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery'",
+      "window.$": "jquery"
+  }),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: './index.pug'
@@ -33,6 +40,16 @@ const config = {
   ],
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      },
       { 
         test: /\.pug$/,
         use: ['pug-loader']
