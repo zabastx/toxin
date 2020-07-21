@@ -11,7 +11,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10%;
+    padding: 0 140px;
     height: 70px;
     box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   }
@@ -24,15 +24,10 @@ li {
   #menu p {
     margin-left: 41px;
   }
-  
-  button {
-    font-size: 12px;
-    outline: none;
-    text-transform: uppercase;
-    border-radius: 22px;
-    height: 34px;
-    font-weight: bold;
+
+  #menu button {
     margin-left: 20px;
+    height: 34px;
   }
   
   #login {
@@ -51,7 +46,7 @@ li {
   }
   
   #logo svg {
-    margin-left: 12.5px;
+    margin-right: 12.5px;
     vertical-align: middle;
     color: #1F2041;
   }

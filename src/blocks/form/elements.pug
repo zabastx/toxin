@@ -1,0 +1,54 @@
+
+mixin input-email
+    form#submit-email
+        input(type="email", name="sub", placeholder='Email', required)
+        input(type="submit", value='arrow_forward')
+
+#inputs
+    .elem-col
+        h3 Text field
+        h3.dark50 default
+        input(type="email" placeholder='Email')
+        h3 Text field
+        h3.dark50 hover / focus
+        input(type="text" value='This is pretty awesome')
+        h3 dropdown
+        h3.dark50 default
+        select
+            option
+            option
+            option
+        h3 masked text field
+        h3.dark50 default
+        input(type="text")
+    .elem-col
+        h3 checkbox buttons
+        label
+            input(type="checkbox")
+            p.dark50 Можно курить
+        input(type="checkbox" checked)
+        p.dark50 Можно с питомцами
+        input(type="checkbox" checked)
+        p.dark50 Можно пригласить гостей (до 10 человек)
+        h3 radio buttons
+        input(type="radio" name='gender')
+        input(type="radio" name='gender')
+    .elem-col
+        h3 range slider
+        h3.dark50#amount
+        #slider-range
+        h3 buttons
+        #buttons
+            button.click-purple click me
+            button(disabled).click-purple click me
+            button.click-white click me
+            button(disabled).click-white click me
+            br
+            span.click-span click me
+            span.click-span.click-span-grey click me
+            button.payment перейти к оплате
+#dropdowns
+    .elem-col
+    .elem-col
+    .elem-col
+#review

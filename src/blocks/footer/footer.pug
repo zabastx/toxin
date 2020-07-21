@@ -18,28 +18,28 @@ mixin footer(type)
                         include toxin.svg
                     p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
                 .footer-list
-                    h2 Навигация
+                    h3 Навигация
                     li О нас
                     li Новости
                     li Служба поддержки
                     li Услуги
                 .footer-list
-                    h2 О нас
+                    h3 О нас
                     li О сервисе
                     li Наша команда
                     li Вакансии
                     li Инвесторы
                 .footer-list
-                    h2 Служба поддержки
+                    h3 Служба поддержки
                     li Соглашения
                     li Сообщества
                     li Связь с нами
                 .footer-block
-                    h2 Подписка
+                    h3 Подписка
                     p Получайте специальные предложения и новости сервиса
                     form#submit-email
-                        input(type="email", name="sub", placeholder='Email')
-                        submit arrow_forward
+                        input(type="email", name="sub", placeholder='Email', required)
+                        input(type="submit", value="arrow_forward")
             #lower
                 p Copyright © 2018 Toxin отель. Все права зачищены.
                 #contacts

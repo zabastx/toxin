@@ -38,7 +38,7 @@ footer #upper {
     height: 372px;
     display: flex;
     align-items: flex-start;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-right: 140px;
     padding-left: 140px;
     color: rgba(31, 32, 65, 0.5);
@@ -56,15 +56,11 @@ footer #upper {
     margin-top: 100px;
 }
 
-#upper h2 {
+#upper h3 {
     padding: 0;
     margin: 0;
     font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    font-family: 'montserrat';
     color: #1F2041;
-    text-transform: uppercase;
 }
 
 #upper li {
@@ -79,37 +75,4 @@ footer #upper {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-#submit-email {
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-    margin: 0;
-    margin-top: 20px;
-    height: 44px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    box-sizing: border-box;
-    border-radius: 4px;
-    padding: 0;
-}
-
-#submit-email submit {
-    font-family: 'Material icons';
-    font-size: 24px;
-    line-height: 44px;
-    color: #BC9CFF;
-    width: 44px;
-    text-align: center;
-    margin: 0;
-}
-
-#submit-email input {
-    border: none;
-    padding-left: 15px;
-    width: 100%;
-}
-
-#submit-email input::placeholder {
-    color: rgba(31, 32, 65, 0.25);
 }
