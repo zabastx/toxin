@@ -23,16 +23,35 @@ mixin input-email
         input(type="text")
     .elem-col
         h3 checkbox buttons
-        label
-            input(type="checkbox")
-            p.dark50 Можно курить
-        input(type="checkbox" checked)
-        p.dark50 Можно с питомцами
-        input(type="checkbox" checked)
-        p.dark50 Можно пригласить гостей (до 10 человек)
+        #checkbox
+            label.dark50.checkbox-label Можно курить
+                input(type="checkbox")
+                span.checkmark
+            label.dark50.checkbox-label Можно с питомцами
+                input(type="checkbox")
+                span.checkmark
+            label.dark50.checkbox-label Можно пригласить гостей (до 10 человек)
+                input(type="checkbox")
+                span.checkmark
         h3 radio buttons
-        input(type="radio" name='gender')
-        input(type="radio" name='gender')
+        #radio
+            label.dark50.checkbox-label Мужчина
+                input(type="radio" name='gender')
+                span.checkmark
+            label.dark50.checkbox-label Женщина
+                input(type="radio" name='gender')
+                span.checkmark
+        h3 toggle
+        #toggle
+            label.switch
+                input(type="checkbox")
+                span.togglemark
+            span.dark75 Получать спецпредложения
+        h3 like button
+        #likes
+            button.like-btn
+                i.mi-icons favorite_border
+                i.like-txt 2
     .elem-col
         h3 range slider
         h3.dark50#amount

@@ -6,7 +6,7 @@
 body {
     display: flex;
     flex-direction: column;
-    background: #E5E5E5;
+    background: #f4f4f6;
     margin: 0;
     font-family: 'montserrat', sans-serif;
 }

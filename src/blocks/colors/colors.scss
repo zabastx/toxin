@@ -7,6 +7,9 @@ $list: 1, 0.75, 0.5, 0.25, 0.05;
         background: rgba(31, 32, 65, $i);
         border-radius: 6px;
     }
+    .dark#{$i*100} {
+        color: rgba(31, 32, 65, $i);
+    }
 }
 
 .quicksand {

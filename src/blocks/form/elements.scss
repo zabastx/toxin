@@ -48,6 +48,7 @@ input:hover, input:focus {
 
 .elem-col {
     width: 320px;
+    margin: 0 5px;
     h3 {
         display: inline-block;
         box-sizing: border-box;
@@ -77,18 +78,6 @@ input:hover, input:focus {
     .click-span {
         margin-right: 20px;
     }
-}
-
-.dark50 {
-    color: rgba(31, 32, 65, 0.5);
-}
-
-input[type="checkbox"] {
-    box-sizing: border-box;
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    margin: auto 0;
 }
 
 .ui-slider-horizontal {
@@ -143,6 +132,9 @@ input[type="checkbox"] {
 }
 #buttons {
     margin-top: 16px;
+    .payment {
+        margin-top: 30px;
+    }
 }
 
 button {
@@ -175,4 +167,180 @@ button {
     color: #fff;
     border: none;
     font-family: 'montserrat', sans-serif;
+}
+
+.checkbox-label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        &:checked ~ .checkmark {
+            border: 1px solid #BC9CFF;
+            &:after {
+                display: block;
+            }
+        }
+        &:hover ~ .checkmark {
+            border: 1px solid #BC9CFF;
+        }
+    }
+    .checkmark::after {
+        border: solid;
+        border-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        border-image-slice: 1;
+        border-width: 0 3px 3px 0;
+        left: 5px;
+        top: 2px;
+        width: 6px;
+        height: 8px;
+        transform: rotate(45deg);
+    }
+  }
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px;
+    &:after {
+        position: absolute;
+        content: '';
+        display: none;
+    }
+}
+
+#checkbox, #radio, #toggle, #likes {
+    margin-top: 16px;
+    margin-bottom: 40px;
+}
+
+#radio {
+    display: flex;
+    label {
+        width: 50%;
+    }
+    .checkmark {
+        border-radius: 50%;
+        &::after {
+            transform: initial;
+            border: none;
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            left: 3px;
+            top: 3px;
+        }
+    }
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    &:hover .togglemark {
+        border: 1px solid #BC9CFF;
+    }
+    & + .dark75 {
+        font-size: 14px;
+        line-height: 24px;
+        margin-left: 10px;
+    }
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .togglemark {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 10px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+  }
+  
+  .togglemark:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 3px;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+    background: rgba(31, 32, 65, 0.25);
+  }
+  
+  input:checked + .togglemark:before {
+    -webkit-transform: translateX(18px);
+    -ms-transform: translateX(18px);
+    transform: translateX(18px);
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  }
+
+  input:checked + .togglemark {
+    border: 1px solid #BC9CFF;
+  }
+
+  #toggle {
+      display: flex;
+  }
+
+button[class="like-btn"] {
+    width: 40px;
+    height: 20px;
+    border: none;
+    background: #FFFFFF;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: rgba(31, 32, 65, 0.25);
+    display: flex;
+    justify-content: space-between;
+    transition-duration: .4s;
+    box-sizing: border-box;
+    .mi-icons {
+        font-family: 'Material Icons';
+        text-transform: none;
+        font-size: 10px;
+        white-space: nowrap;
+        word-wrap: normal;
+        font-style: normal;
+        vertical-align: middle;
+    }
+    .like-txt {
+        font-size: 10px;
+        line-height: 12px;
+        font-style: normal;
+        margin: 0 auto;
+    }
 }
