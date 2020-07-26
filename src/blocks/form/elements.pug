@@ -51,21 +51,34 @@ mixin input-email
         #likes
             button.like-btn
                 i.mi-icons favorite_border
-                i.like-txt 2
+                i.like-txt
+        h3 rate button
+        #rating
+            .rating
     .elem-col
         h3 range slider
         h3.dark50#amount
         #slider-range
         h3 buttons
         #buttons
-            button.click-purple click me
-            button(disabled).click-purple click me
-            button.click-white click me
-            button(disabled).click-white click me
+            button.click-purple
+                span click me
+            button(disabled).click-purple
+                span click me
+            button.click-white
+                span click me
+            button(disabled).click-white
+                span click me
             br
             span.click-span click me
             span.click-span.click-span-grey click me
-            button.payment перейти к оплате
+            button.payment
+                span перейти к оплате
+                i.material-icons arrow_forward
+        h3 pagination
+        #pagination
+            .jq-pagination
+            p.dark75 1 – 12 из 100+ вариантов аренды
 #dropdowns
     .elem-col
     .elem-col

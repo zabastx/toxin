@@ -1,3 +1,5 @@
+@import "~px-jquery-pagination/px-pagination.css";
+
 #submit-email {
     display: flex;
     margin: 0;
@@ -44,11 +46,11 @@ input:hover, input:focus {
 #inputs, #dropdowns {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .elem-col {
     width: 320px;
-    margin: 0 5px;
     h3 {
         display: inline-block;
         box-sizing: border-box;
@@ -61,8 +63,8 @@ input:hover, input:focus {
         margin-bottom: 20px;
     }
     p {
+        font-size: 14px;
         display: inline-block;
-        margin-left: 10px;
     }
     label {
         display: flex;
@@ -122,12 +124,19 @@ input:hover, input:focus {
 
 .click-white {
     color: #BC9CFF;
-    background: #fff;
-    border: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    border: 1px solid;
-    padding: 0 20px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border: none;
+    border-radius: 22px;
+    width: 100px;
+    padding: 2px;
+    span {
+        display: block;
+        background: #fff;
+        border-radius: 20px;
+        padding: 13px 1em;
+    }
     &:disabled {
-        opacity: 0.5;
+        background: linear-gradient(180deg, #BC9CFF77 0%, #8BA4F977 100%);
     }
 }
 #buttons {
@@ -164,9 +173,15 @@ button {
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border-radius: 22px;
     height: 44px;
+    line-height: 24px;
     color: #fff;
     border: none;
     font-family: 'montserrat', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    span {
+        margin: 0 auto;
+    }
 }
 
 .checkbox-label {
@@ -227,7 +242,7 @@ button {
     }
 }
 
-#checkbox, #radio, #toggle, #likes {
+#checkbox, #radio, #toggle, #likes, #rating, #pagination {
     margin-top: 16px;
     margin-bottom: 40px;
 }
@@ -343,4 +358,11 @@ button[class="like-btn"] {
         font-style: normal;
         margin: 0 auto;
     }
+}
+
+.rating {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
