@@ -40,6 +40,39 @@
         -moz-osx-font-smoothing:grayscale;
         font-feature-settings:'liga';
       }
+@font-face {
+    font-family: 'FA brands';
+    font-weight: 400;
+    src:
+        url(fonts/fa-brands-400.ttf) format('truetype'),
+        url(fonts/fa-brands-400.svg) format('svg'),
+        url(fonts/fa-brands-400.woff) format('woff');
+    }
+
+.fab {
+    font-family: 'FA brands';
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.fa-instagram, .fa-twitter, .fa-facebook {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa-instagram::before {
+    content: '\f16d';
+}
+
+.fa-twitter::before {
+    content: '\f099';
+}
+
+.fa-facebook::before {
+    content: '\f082';
+}
 
 
 
@@ -92,11 +125,14 @@ li {
     color: #fff;
     background: linear-gradient(180deg, #BC9CFF, #8BA4F9);
   }
-  
-  #logo svg {
+
+  #logo {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  #logo svg:nth-child(1) {
     margin-right: 12.5px;
-    vertical-align: middle;
-    color: #1F2041;
   }
 
   nav b {
@@ -120,19 +156,19 @@ footer {
     box-sizing: border-box;
 }
 
-#contacts svg {
-    margin-left: 20px;
-    height: 100%;
+.contacts.fab {
+    display: grid;
+    line-height: 24px;
+    grid-template-columns: repeat(3, max-content);
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 .true #lower {
     display: flex;
     justify-content: space-between;
     padding: 0 140px;
-}
-
-.true #lower #contacts {
-    vertical-align: middle;
 }
 
 .true #upper {

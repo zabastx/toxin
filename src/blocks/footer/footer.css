@@ -15,19 +15,19 @@ footer {
     box-sizing: border-box;
 }
 
-#contacts svg {
-    margin-left: 20px;
-    height: 100%;
+.contacts.fab {
+    display: grid;
+    line-height: 24px;
+    grid-template-columns: repeat(3, max-content);
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 .true #lower {
     display: flex;
     justify-content: space-between;
     padding: 0 140px;
-}
-
-.true #lower #contacts {
-    vertical-align: middle;
 }
 
 .true #upper {

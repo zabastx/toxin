@@ -5,10 +5,10 @@ mixin footer(type)
                 include logo.svg
                 include toxin.svg
             p Copyright © 2018 Toxin отель. Все права зачищены.
-            #contacts
-                include twitter.svg
-                include fb.svg
-                include insta.svg
+            .contacts.fab
+                span.fa-twitter
+                span.fa-facebook
+                span.fa-instagram
     else
         footer.true
             #upper
@@ -42,7 +42,7 @@ mixin footer(type)
                         input(type="submit", value="arrow_forward")
             #lower
                 p Copyright © 2018 Toxin отель. Все права зачищены.
-                #contacts
-                    include twitter.svg
-                    include fb.svg
-                    include insta.svg
+                .contacts.fab
+                    span.fa-twitter
+                    span.fa-facebook
+                    span.fa-instagram
