@@ -8,10 +8,11 @@ const config = {
   context: path.resolve(__dirname, 'src'),
   entry: {
     index: './js/index.js',
+    uikit: './js/uikit.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: "[name].js",
+    filename: "scripts/[name].js",
   },
   optimization: {
     splitChunks: {
@@ -28,7 +29,9 @@ const config = {
       "window.jQuery": "jquery'",
       "window.$": "jquery"
   }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css'
+    }),
     new HtmlWebpackPlugin({
       template: './index.pug'
     }),
@@ -64,13 +67,7 @@ const config = {
       {
         test: /\.(css)|(scss)$/i,
         use: [
-          'style-loader',
-          {
-          loader: MiniCssExtractPlugin.loader,
-          options: {
-            name: '[name].css',
-          }
-        }, 'css-loader', 'sass-loader'
+          'style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
       ],
       },
       {
