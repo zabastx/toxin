@@ -1,4 +1,5 @@
 import '../../js/jq-star';
+import './elements.scss';
 require('px-jquery-pagination');
 require('webpack-jquery-ui');
 require('webpack-jquery-ui/css');
@@ -33,32 +34,21 @@ $( "#amount" ).text( $( "#slider-range" ).slider( "values", 0 ) + "₽ - " + $( 
 
 // Like button function
 
-let liked = false;
-let likes = 10;
-$('.like-txt').text(likes);
-
-  $(".like-btn").click(() => {
-    if (liked) {
-      $(".like-btn").css({
-        border: '1px solid rgba(31, 32, 65, 0.25)',
-        color: 'rgba(31, 32, 65, 0.25)'
-      });
-      $(".mi-icons").text('favorite_border');
-      liked = false;
-      likes--;
-      $(".like-txt").text(likes);
-    }
-    else {
-      $(".like-btn").css({
-        border: '1px solid #BC9CFF',
-        color: '#BC9CFF'
-      });
-      $(".mi-icons").text('favorite');
-      liked = true;
-      likes++;
-      $(".like-txt").text(likes);
-    }
-  })
+$('.like-btn').click(e => {
+  const x = e.currentTarget;
+  if (e.currentTarget.firstChild.innerText == 'favorite_border') {
+    x.firstChild.innerText = 'favorite';
+    x.style.color = '#BC9CFF';
+    x.style.border = '1px solid #BC9CFF';
+    x.lastChild.innerText++;
+  }
+  else {
+    x.firstChild.innerText = 'favorite_border';
+    x.style.color = 'rgba(31, 32, 65, 0.25)';
+    x.style.border = '1px solid rgba(31, 32, 65, 0.25)';
+    x.lastChild.innerText--;
+  }
+})
 
 // JQ star rating
 

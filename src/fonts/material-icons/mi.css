@@ -3,9 +3,9 @@
     font-style:normal;
     font-weight:400;
     src:
-        url('material-icons.svg') format('svg'),
+        url('material-icons.ttf') format('truetype'),
         url('material-icons.woff') format('woff'),
-        url('material-icons.ttf') format('truetype');
+        url('material-icons.svg') format('svg');
     }
 
     .material-icons {

@@ -2,8 +2,7 @@ mixin footer(type)
     if (!type)
         footer.false
             #logo
-                include logo.svg
-                include toxin.svg
+                img(src=require('./blocks/footer/logo.png').default alt='logo')
             p Copyright © 2018 Toxin отель. Все права зачищены.
             .contacts.fab
                 span.fa-twitter
@@ -14,8 +13,7 @@ mixin footer(type)
             #upper
                 .footer-block
                     #logo
-                        include logo.svg
-                        include toxin.svg
+                        img(src=require('./blocks/footer/logo.png').default alt='logo')
                     p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
                 .footer-list
                     h3 Навигация

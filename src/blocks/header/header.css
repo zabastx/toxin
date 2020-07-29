@@ -45,11 +45,10 @@ li {
     color: #fff;
     background: linear-gradient(180deg, #BC9CFF, #8BA4F9);
   }
-  
-  #logo svg {
-    margin-right: 12.5px;
-    vertical-align: middle;
-    color: #1F2041;
+
+  #logo {
+    display: inline-flex;
+    align-items: center;
   }
 
   nav b {

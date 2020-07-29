@@ -1,8 +1,7 @@
 mixin header(type)
     nav
         #logo
-            include ./logo.svg
-            include ./toxin.svg
+            img(src=require('./blocks/header/logo.png').default alt="logo")
         #menu
             ul
                 li <b>О нас</b>
