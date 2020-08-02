@@ -9,6 +9,11 @@
     input {
         border: none;
         border-radius: 4px;
+        box-sizing: border-box;
+        height: 100%;
+        &:nth-child(1) {
+            margin-right: 2px;
+        }
     }
 }
 
@@ -35,6 +40,8 @@ input[type="email"], input[type="text"], select {
     border: 1px solid #c7c7cf;
     box-sizing: border-box;
     border-radius: 4px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 14px;
 }
 
 input:hover, input:focus {
@@ -48,14 +55,16 @@ input:hover, input:focus {
 }
 
 .elem-col {
+    .guest-dropdown {
+        margin-bottom: 20px;
+    }
     width: 320px;
     h3 {
-        display: inline-block;
-        box-sizing: border-box;
-        width: 50%;
+        display: inline-flex;
+        border: 1px solid;
     }
-    h3[class="dark50"] {
-        text-align: right;
+    .dark100 {
+        width: max-content;
     }
     input, select {
         margin-bottom: 20px;
@@ -70,13 +79,6 @@ input:hover, input:focus {
     #slider-range {
         margin-top: 20px;
         margin-bottom: 40px;
-    }
-    button {
-        margin-right: 20px;
-        margin-bottom: 30px;
-    }
-    .click-span {
-        margin-right: 20px;
     }
 }
 
@@ -113,6 +115,7 @@ input:hover, input:focus {
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border-radius: 22px;
     border: none;
+    width: 100px;
     color: #fff;
     padding: 0 20px;
     &:disabled {
@@ -138,9 +141,21 @@ input:hover, input:focus {
     }
 }
 #buttons {
-    margin-top: 16px;
-    .payment {
-        margin-top: 30px;
+    width: 100%;
+    display: grid;
+    gap: 30px;
+    div {
+        &:nth-child(1) {
+            display: grid;
+            grid-template: repeat(2, min-content) / repeat(2, min-content);
+            gap: 30px 20px;
+        }
+        &:nth-child(2) {
+            gap: 20px;
+        }
+    }
+    .click-span {
+        margin-right: 20px;
     }
 }
 
@@ -154,11 +169,14 @@ button {
     font-weight: bold;
   }
 
-.click-span {
+.click-span, .click-span-grey {
     display: inline-block;
     text-transform: uppercase;
     font-size: 12px;
     line-height: 15px;
+}
+
+.click-span {
     color: #BC9CFF;
 }
 
@@ -240,7 +258,7 @@ button {
     }
 }
 
-#checkbox, #radio, #toggle, #likes, #rating, #pagination {
+#checkbox, #radio, #toggle, #likes, #rating, #pagination, #buttons {
     margin-top: 16px;
     margin-bottom: 40px;
 }
@@ -365,6 +383,10 @@ button[class="like-btn"] {
     -webkit-text-fill-color: transparent;
 }
 
+.rating {
+    cursor: pointer;
+}
+
 #review {
     display: flex;
     justify-content: space-between;
@@ -379,6 +401,7 @@ button[class="like-btn"] {
         column-gap: 10px;
         grid-template-areas: 'icon head' 'icon text';
         grid-template-columns: 48px 1fr;
+        width: max-content;
         > * {
             margin: 0;
         }
@@ -482,5 +505,78 @@ button[class="like-btn"] {
     p {
         grid-area: text;
         margin-top: 10px;
+    }
+}
+
+.guest-dropdown {
+    width: 100%;
+    position: relative;
+    button {
+        font-family: 'montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        text-transform: none;
+        text-align: left;
+        padding-left: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 4px;
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .gdrop-content {
+        width: 100%;
+        background: #fff;
+        position: absolute;
+        z-index: 2;
+        box-sizing: border-box;
+        display: none;
+        flex-direction: column;
+        border-top: none;
+        border: 1px solid rgba(31, 32, 65, 0.5);
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+        padding: 7px 7px 13px 15px;
+        margin: 0;
+        p {
+            margin: 0;
+            font-size: 12px;
+            line-height: 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &:nth-child(1) {
+                margin-bottom: 7px;
+            }
+            &:nth-child(2) {
+                margin-bottom: 7px;
+            }
+            &:nth-child(3) {
+                margin-bottom: 20px;
+            }
+            button {
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                border: 1px solid rgba(31, 32, 65, 0.25);
+                color: rgba(31, 32, 65, 0.5);
+                box-sizing: border-box;
+                border-radius: 22px;
+                padding: 0;
+                &:disabled {
+                    opacity: 0.5;
+                }
+            }
+        }
+        .click-span-grey {
+            visibility: hidden;
+        }
     }
 }

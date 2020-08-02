@@ -1,4 +1,3 @@
-
 mixin input-email
     form#submit-email
         input(type="email", name="sub", placeholder='Email', required)
@@ -6,23 +5,31 @@ mixin input-email
 
 #inputs
     .elem-col
-        h3 Text field
+        h3.dark100 Text field
         h3.dark50 default
         input(type="email" placeholder='Email')
-        h3 Text field
-        h3.dark50 hover / focus
-        input(type="text" value='This is pretty awesome')
-        h3 dropdown
+        h3.dark100 dropdown
         h3.dark50 default
-        select
-            option
-            option
-            option
-        h3 masked text field
+        .guest-dropdown 
+            button.dark75 Сколько гостей
+                i.material-icons.dark50 expand_more
+            .gdrop-content.dark100
+                p Взрослые
+                    span <button class='minus' disabled>-</button>0<button class='plus'>+</button>
+                p Дети
+                    span <button class='minus' disabled>-</button>0<button class='plus'>+</button>
+                p Младенцы
+                    span <button class='minus' disabled>-</button>0<button class='plus'>+</button>
+                p
+                    span.click-span-grey очистить
+                    span.click-span применить
+        h3.dark100 masked text field
         h3.dark50 default
-        input(type="text")
+        input(type='text' placeholder='ДД.ММ.ГГГГ').masked-input.dark75
+        h3.dark100 subscription text field
+        +input-email
     .elem-col
-        h3 checkbox buttons
+        h3.dark100 checkbox buttons
         #checkbox
             label.dark50.checkbox-label Можно курить
                 input(type="checkbox")
@@ -33,7 +40,7 @@ mixin input-email
             label.dark50.checkbox-label Можно пригласить гостей (до 10 человек)
                 input(type="checkbox")
                 span.checkmark
-        h3 radio buttons
+        h3.dark100 radio buttons
         #radio
             label.dark50.checkbox-label Мужчина
                 input(type="radio" name='gender')
@@ -41,41 +48,42 @@ mixin input-email
             label.dark50.checkbox-label Женщина
                 input(type="radio" name='gender')
                 span.checkmark
-        h3 toggle
+        h3.dark100 toggle
         #toggle
             label.switch
                 input(type="checkbox")
                 span.togglemark
             span.dark75 Получать спецпредложения
-        h3 like button
+        h3.dark100 like button
         #likes
             button.like-btn
                 i.mi-icons favorite_border
                 i.like-txt 2
-        h3 rate button
+        h3.dark100 rate button
         #rating
             .rating
     .elem-col
-        h3 range slider
+        h3.dark100 range slider
         h3.dark50#amount
         #slider-range
-        h3 buttons
+        h3.dark100 buttons
         #buttons
-            button.click-purple
-                span click me
-            button(disabled).click-purple
-                span click me
-            button.click-white
-                span click me
-            button(disabled).click-white
-                span click me
-            br
-            span.click-span click me
-            span.click-span.click-span-grey click me
+            div
+                button.click-purple
+                    span click me
+                button(disabled).click-purple
+                    span click me
+                button.click-white
+                    span click me
+                button(disabled).click-white
+                    span click me
+            div
+                span.click-span click me
+                span.click-span.click-span-grey click me
             button.payment
                 span перейти к оплате
                 i.material-icons arrow_forward
-        h3 pagination
+        h3.dark100 pagination
         #pagination
             .jq-pagination
             p.dark75 1 – 12 из 100+ вариантов аренды
