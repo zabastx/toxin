@@ -30,7 +30,7 @@ const config = {
       "window.$": "jquery"
   }),
     new MiniCssExtractPlugin({
-      filename: '[name].css'
+      filename: 'styles/[name].css'
     }),
     new HtmlWebpackPlugin({
       template: './index.pug'
@@ -67,7 +67,12 @@ const config = {
       {
         test: /\.(css)|(scss)$/i,
         use: [
-          'style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
+          'style-loader', {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../'
+            }
+          }, 'css-loader', 'sass-loader'
       ],
       },
       {
