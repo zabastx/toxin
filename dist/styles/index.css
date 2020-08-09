@@ -1,0 +1,9 @@
+@font-face{font-family:'FA brands';font-weight:400;src:url(../fonts/fa-brands-400.ttf) format("truetype"),url(../fonts/fa-brands-400.svg) format("svg"),url(../fonts/fa-brands-400.woff) format("woff")}.fab{font-family:'FA brands';font-weight:400;font-size:24px}.fa-instagram,.fa-twitter,.fa-facebook{background:linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}.fa-instagram::before{content:'\f16d'}.fa-twitter::before{content:'\f099'}.fa-facebook::before{content:'\f082'}
+
+@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(../fonts/material-icons.ttf) format("truetype"),url(../fonts/material-icons.woff) format("woff"),url(../fonts/material-icons.svg) format("svg")}.material-icons{font-family:'Material Icons';vertical-align:middle;font-weight:400;font-style:normal;font-size:24px;display:inline-block;line-height:1;text-transform:none;letter-spacing:normal;word-wrap:normal;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;-moz-osx-font-smoothing:grayscale;font-feature-settings:'liga'}
+
+@font-face{font-family:'montserrat';src:url(../fonts/montserrat.svg) format("svg"),url(../fonts/montserrat.woff) format("woff"),url(../fonts/montserrat.ttf) format("truetype")}
+
+@font-face{font-family:'quicksand';src:url(../fonts/quicksand.svg) format("svg"),url(../fonts/quicksand.woff) format("woff"),url(../fonts/quicksand.ttf) format("truetype")}@font-face{font-family:'open sans';src:url(../fonts/opensans.ttf) format("truetype")}
+
+
