@@ -5,3 +5,9 @@
         url('quicksand.woff') format('woff'),
         url('quicksand.ttf') format('truetype');
     }
+
+@font-face {
+    font-family: 'open sans';
+    src:
+        url('opensans.ttf') format('truetype');
+}
