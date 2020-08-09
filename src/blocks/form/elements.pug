@@ -25,7 +25,11 @@ mixin input-email
                     span.click-span применить
         h3.dark100 masked text field
         h3.dark50 default
-        input(type='text' placeholder='ДД.ММ.ГГГГ').masked-input.dark75
+        input(type='text' placeholder='ДД.ММ.ГГГГ' spellcheck='false').masked-input.dark75
+        h3.dark100 date dropdown
+        input.date-picker
+        h3.dark100 filter date dropdown
+        input.filter-date-picker
         h3.dark100 subscription text field
         +input-email
     .elem-col

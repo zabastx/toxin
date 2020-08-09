@@ -1,7 +1,6 @@
 #submit-email {
     display: flex;
     margin: 0;
-    margin-top: 20px;
     height: 44px;
     border: 1px solid rgba(31, 32, 65, 0.25);
     border-radius: 4px;
@@ -59,13 +58,6 @@ input:hover, input:focus {
         margin-bottom: 20px;
     }
     width: 320px;
-    h3 {
-        display: inline-flex;
-        border: 1px solid;
-    }
-    .dark100 {
-        width: max-content;
-    }
     input, select {
         margin-bottom: 20px;
     }
@@ -79,6 +71,16 @@ input:hover, input:focus {
     #slider-range {
         margin-top: 20px;
         margin-bottom: 40px;
+    }
+    h3 {
+        display: inline-block;
+        box-sizing: border-box;
+        &.dark100, &.dark50 {
+            min-width: 50%;
+        }
+        &.dark50 {
+            text-align: right;
+        }
     }
 }
 
@@ -470,6 +472,10 @@ button[class="like-btn"] {
 .px-btn-prev, .px-btn-next {
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     border-radius: 22px;
+}
+
+.px-btn-prev {
+    display: none;
 }
 
 .px-paginate-container .px-btn.material-icons {

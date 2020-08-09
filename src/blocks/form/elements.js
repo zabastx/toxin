@@ -2,7 +2,7 @@ import './elements.scss'
 import './datepicker.scss'
 
 require('moment')
-require('./jq-datepicker')
+require('./daterangepicker')
 require('./jq-star')
 require('./jq-maskedinput')
 require('px-jquery-pagination')
@@ -19,6 +19,67 @@ const sliderConfig = {
   }
 }
 
+const dateConfig = {
+  singleDatePicker: true,
+  locale: {
+    format: 'DD.MM.YYYY',
+    separator: " - ",
+    applyLabel: "Применить",
+    cancelLabel: "Отменить",
+    fromLabel: "From",
+    toLabel: "To",
+    customRangeLabel: "Custom",
+    weekLabel: "W",
+    firstDay: 1,
+    daysOfWeek: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+        "monthNames": [
+            "Январь",
+            "Февраль",
+            "Март",
+            "Апрель",
+            "Май",
+            "Июнь",
+            "Июль",
+            "Август",
+            "Сентябрь",
+            "Октябрь",
+            "Ноябрь",
+            "Декабрь"
+        ]
+    },
+    linkedCalendars: false
+  }
+
+const filterDateConfig = {
+   locale: {
+     format: 'DD MMM',
+     separator: " - ",
+     applyLabel: "Применить",
+     cancelLabel: "Отменить",
+     fromLabel: "From",
+     toLabel: "To",
+     customRangeLabel: "Custom",
+     weekLabel: "W",
+     firstDay: 1,
+     daysOfWeek: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+         "monthNames": [
+             "Январь",
+             "Февраль",
+             "Март",
+             "Апрель",
+             "Май",
+             "Июнь",
+             "Июль",
+             "Август",
+             "Сентябрь",
+             "Октябрь",
+             "Ноябрь",
+             "Декабрь"
+         ]
+     },
+     linkedCalendars: false,
+   }
+
 const paginConfig = {
   currentPage: 1,
   totalPageCount: 15,
@@ -27,13 +88,6 @@ const paginConfig = {
   prevPageName:'arrow_back',
   nextPageName:'arrow_forward'
 }
-
-// input hover
-
-const focus = () => {$('.elem-col:nth-child(1) h3.dark50:nth-child(2)').text('hover / focus')}
-const def = () => {$('.elem-col:nth-child(1) h3.dark50:nth-child(2)').text('default')}
-
-$('.elem-col input[placeholder="Email"]').focus(focus).focusout(def).hover(focus, def)
 
 // jQuery UI slider
 
@@ -125,3 +179,17 @@ $('.guest-dropdown button.dark75').click(e => {
 // input mask
 
 $('.masked-input').mask("99.99.9999")
+$('.date-picker').mask("99.99.9999")
+
+// JQuery date range picker
+
+const formatMonth = () => {
+  $('.filter-date-picker').val($('.filter-date-picker').val().split('.').join(''))
+}
+
+$('.date-picker').daterangepicker(dateConfig)
+$('.filter-date-picker').daterangepicker(filterDateConfig)
+formatMonth()
+$('.filter-date-picker').change(formatMonth)
+$('.date-picker').val('ДД.ММ.ГГГГ')
+$('.next span').text('arrow_forward')
