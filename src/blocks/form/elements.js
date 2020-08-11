@@ -171,9 +171,45 @@ $('.guest-dropdown button.dark75').click(e => {
     })
   }
 }).hover(e => {
-  $(e.delegateTarget).css({ border: '1px solid rgba(31, 32, 65, 0.5'})
+  $(e.delegateTarget).css({ borderColor: 'rgba(31, 32, 65, 0.5'})
 }, e => {
-  $(e.delegateTarget).css({ border: '1px solid rgba(31, 32, 65, 0.25'})
+  $(e.delegateTarget).css({ borderColor: 'rgba(31, 32, 65, 0.25'})
+})
+
+$('.gdrop-content p span i').text(0)
+
+$('.gdrop-content button').click(e => {
+  if (e.delegateTarget.className === 'plus') {
+    $('.gdrop-content .click-span-grey').css({visibility: 'visible'})
+    e.delegateTarget.previousSibling.textContent++
+    $(e.delegateTarget.previousSibling.previousSibling).attr('disabled', false)
+  }
+  else {
+    e.delegateTarget.nextSibling.textContent--
+    if (e.delegateTarget.nextSibling.textContent == 0) {
+      $(e.delegateTarget).attr('disabled', true)
+    }
+  }
+})
+
+const output = $('.guest-dropdown > button')
+
+$('.gdrop-content .click-span-grey').click(e => { // кнопка Очистить
+  $('.gdrop-content p span i').text(0)
+  $('.gdrop-content .minus').attr('disabled', true)
+  $(e.delegateTarget).css({visibility: 'hidden'})
+  output.text('Сколько гостей')
+})
+
+$('.gdrop-content .click-span').click(e => { // кнопка Применить
+  let guestNum = []
+  for (let i of $('.gdrop-content i')) {
+    guestNum.push(parseInt(i.innerText))
+  }
+  guestNum = guestNum.reduce((a, b) => a + b)
+  if (guestNum === 1) {output.text(`${guestNum} гость`)}
+  else if (guestNum < 5) {output.text(`${guestNum} гостя`)}
+  else {output.text(`${guestNum} гостей`)}
 })
 
 // input mask
@@ -192,4 +228,3 @@ $('.filter-date-picker').daterangepicker(filterDateConfig)
 formatMonth()
 $('.filter-date-picker').change(formatMonth)
 $('.date-picker').val('ДД.ММ.ГГГГ')
-$('.next span').text('arrow_forward')

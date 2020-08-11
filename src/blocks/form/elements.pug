@@ -12,14 +12,22 @@ mixin input-email
         h3.dark50 default
         .guest-dropdown 
             button.dark75 Сколько гостей
-                i.material-icons.dark50 expand_more
             .gdrop-content.dark100
                 p Взрослые
-                    span <button class='minus' disabled>-</button>0<button class='plus'>+</button>
+                    span
+                        button.minus(disabled) -
+                        i 
+                        button.plus +
                 p Дети
-                    span <button class='minus' disabled>-</button>0<button class='plus'>+</button>
+                    span
+                        button.minus(disabled) -
+                        i 
+                        button.plus +                        
                 p Младенцы
-                    span <button class='minus' disabled>-</button>0<button class='plus'>+</button>
+                    span
+                        button.minus(disabled) -
+                        i 
+                        button.plus +
                 p
                     span.click-span-grey очистить
                     span.click-span применить
@@ -92,9 +100,6 @@ mixin input-email
             .jq-pagination
             p.dark75 1 – 12 из 100+ вариантов аренды
 #dropdowns
-    .elem-col
-    .elem-col
-    .elem-col
 #review
     .features.dark75
         div

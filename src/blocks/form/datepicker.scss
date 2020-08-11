@@ -11,6 +11,10 @@
   line-height: 18px;
   font-family: 'montserrat', sans-serif;
   text-decoration: none;
+  background-image: url(./expand_more.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position-x: calc(100% - 11px);
 }
 
 .filter-date-picker {

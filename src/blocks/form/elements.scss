@@ -31,7 +31,7 @@ input[type="submit"] {
     border: none;
 }
 
-input[type="email"], input[type="text"], select {
+input[type="email"], input[type="text"], select, .masked-input {
     background: #fff;
     padding-left: 15px;
     width: 100%;
@@ -180,10 +180,12 @@ button {
 
 .click-span {
     color: #BC9CFF;
+    cursor: pointer;
 }
 
 .click-span-grey {
     color: rgba(31, 32, 65, 0.5);
+    cursor: pointer;
 }
 
 .payment {
@@ -517,6 +519,14 @@ button[class="like-btn"] {
 .guest-dropdown {
     width: 100%;
     position: relative;
+    margin: 0;
+    & > button::after {
+        content: '\e5cf';
+        font-family: 'material icons';
+        position: relative;
+        font-size: 24px;
+        color: rgba(31, 32, 65, 0.5);
+    }
     button {
         font-family: 'montserrat', sans-serif;
         font-size: 14px;
@@ -557,6 +567,11 @@ button[class="like-btn"] {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            i {
+                font-style: normal;
+                font-weight: bold;
+                margin: 0 10px;
+            }
             &:nth-child(1) {
                 margin-bottom: 7px;
             }
