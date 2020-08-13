@@ -1,4 +1,4 @@
-li {
+nav li {
     display: inline;
     margin-left: 10px;
   }
@@ -34,9 +34,12 @@ li {
   #login {
     width: 87px;
     background: #fff;
-    border: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border: solid;
     color: #BC9CFF;
+  }
+
+  #login:hover {
+    border-color: #BC9CFF77;
   }
   
   #reg {
@@ -44,6 +47,10 @@ li {
     width: 196px;
     color: #fff;
     background: linear-gradient(180deg, #BC9CFF, #8BA4F9);
+  }
+
+  #reg:hover {
+    opacity: 0.5;
   }
 
   #logo {

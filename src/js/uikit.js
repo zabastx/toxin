@@ -8,7 +8,7 @@ import '../blocks/colors/colors.scss';
 
 // input hover
 
-const focus = () => {$('.elem-col:nth-child(1) h3.dark50:nth-child(2)').text('hover / focus')}
-const def = () => {$('.elem-col:nth-child(1) h3.dark50:nth-child(2)').text('default')}
+const focus = (e) => {$(e.delegateTarget.previousSibling).text('hover / focus')}
+const def = (e) => {$(e.delegateTarget.previousSibling).text('default')}
 
-$('.elem-col h3.dark50 + input[type="email"]').focus(focus).focusout(def).hover(focus, def)
+$('.elem-col:nth-child(1) h3.dark50 + input, .elem-col:nth-child(1) h3.dark50 + div').focus(focus).focusout(def).hover(focus, def)

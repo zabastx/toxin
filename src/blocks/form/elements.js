@@ -150,9 +150,6 @@ $('.guest-dropdown button.dark75').click(e => {
     display: visible ? 'none': 'flex'
   })
   if (visible) {
-    $(e.delegateTarget.lastChild).css({
-      color: 'rgba(31, 32, 65, 0.5)'
-    })
     $(e.delegateTarget).css({
       border: '1px solid rgba(31, 32, 65, 0.25)',
       borderBottomLeftRadius: '4px',
@@ -165,9 +162,6 @@ $('.guest-dropdown button.dark75').click(e => {
       borderBottomLeftRadius: 0,
       borderBottomRightRadius: 0,
       borderBottom: 'none'
-    })
-    $(e.delegateTarget.lastChild).css({
-      color: 'rgba(31, 32, 65, 0.75)'
     })
   }
 }).hover(e => {
@@ -208,8 +202,83 @@ $('.gdrop-content .click-span').click(e => { // кнопка Применить
   }
   guestNum = guestNum.reduce((a, b) => a + b)
   if (guestNum === 1) {output.text(`${guestNum} гость`)}
-  else if (guestNum < 5) {output.text(`${guestNum} гостя`)}
+  else if (guestNum < 5 && guestNum > 1) {output.text(`${guestNum} гостя`)}
   else {output.text(`${guestNum} гостей`)}
+})
+
+// Dropdown
+
+$('.drop-content p span i').text(0)
+
+$('.dropdown > button').click(e => {
+  const visible = e.delegateTarget.nextSibling.style.display == 'flex'
+  $(e.delegateTarget.nextSibling).css({
+    display: visible ? 'none': 'flex'
+  })
+  if (visible) {
+    $(e.delegateTarget).css({
+      border: '1px solid rgba(31, 32, 65, 0.25)',
+      borderBottomLeftRadius: '4px',
+      borderBottomRightRadius: '4px',
+    })
+  }
+  else {
+    $(e.delegateTarget).css({
+      border: '1px solid rgba(31, 32, 65, 0.5)',
+      borderBottomLeftRadius: 0,
+      borderBottomRightRadius: 0,
+      borderBottom: 'none'
+    })
+  }
+})
+
+let comfortCount = [0,0,0]
+let rooms = ['спальни', 'кровати', 'ванные комнаты']
+
+$('.dropdown button').bind('update').on('update', () => {
+  let comfortOut = []
+  for (let i in comfortCount) {
+    if (comfortCount[i] !== 0) {
+      comfortOut.push(`${comfortCount[i]} ${rooms[i]}`)
+    }
+  }
+  $('.dropdown > button').text(comfortOut)
+  if (comfortCount.reduce((a,b) => a+b) === 0) {$('.dropdown > button').text('Удобства')}
+})
+
+$('.drop-content button').click(e => {
+  const room = e.delegateTarget.parentNode.parentNode.textContent.replace(/[+()\d-]+/ig, '').toLowerCase()
+  if (e.delegateTarget.className === 'plus') {
+    e.delegateTarget.previousSibling.textContent++
+    $(e.delegateTarget.previousSibling.previousSibling).attr('disabled', false)
+    switch(room) {
+      case 'спальни':
+        comfortCount[0]++
+        break
+      case 'ванные комнаты':
+        comfortCount[2]++
+        break
+      default:
+        comfortCount[1]++
+    }
+  }
+  else {
+    e.delegateTarget.nextSibling.textContent--
+    if (e.delegateTarget.nextSibling.textContent == 0) {
+      $(e.delegateTarget).attr('disabled', true)
+    }
+    switch(room) {
+      case 'спальни':
+        comfortCount[0]--
+        break
+      case 'ванные комнаты':
+        comfortCount[2]--
+        break
+      default:
+        comfortCount[1]--
+    }
+  }
+  $(e.delegateTarget).trigger('update')
 })
 
 // input mask
@@ -228,3 +297,12 @@ $('.filter-date-picker').daterangepicker(filterDateConfig)
 formatMonth()
 $('.filter-date-picker').change(formatMonth)
 $('.date-picker').val('ДД.ММ.ГГГГ')
+
+
+// Expandable checkbox list
+
+$('.exp-checkbox h3').click( e => {
+  const visible = e.delegateTarget.nextSibling.style.display === 'block'
+  $(e.delegateTarget.nextSibling).css({ display: visible ? 'none': 'block' })
+  $(e.delegateTarget.firstElementChild).css({ transform: visible ? 'rotate(0deg)': 'rotate(-180deg)' })
+})

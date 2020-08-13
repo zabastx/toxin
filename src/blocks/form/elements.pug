@@ -1,15 +1,14 @@
 mixin input-email
-    form#submit-email
+    form.submit-email
         input(type="email", name="sub", placeholder='Email', required)
         input(type="submit", value='arrow_forward')
 
-#inputs
-    .elem-col
-        h3.dark100 Text field
-        h3.dark50 default
-        input(type="email" placeholder='Email')
-        h3.dark100 dropdown
-        h3.dark50 default
+mixin arrow-button(text)
+    button.payment
+        span #{text}
+
+mixin dropdown(guests)
+    if (guests)
         .guest-dropdown 
             button.dark75 Сколько гостей
             .gdrop-content.dark100
@@ -31,27 +30,98 @@ mixin input-email
                 p
                     span.click-span-grey очистить
                     span.click-span применить
+    else
+        .dropdown
+                button.dark75 Удобства
+                .drop-content.dark100
+                    p Спальни
+                        span
+                            button.minus(disabled) -
+                            i 
+                            button.plus +
+                    p Кровати
+                        span
+                            button.minus(disabled) -
+                            i 
+                            button.plus +                        
+                    p Ванные комнаты
+                        span
+                            button.minus(disabled) -
+                            i 
+                            button.plus +
+
+mixin checkbox
+    .checkbox
+        label.dark50.checkbox-label Можно курить
+            input(type="checkbox")
+            span.checkmark
+        label.dark50.checkbox-label Можно с питомцами
+            input(type="checkbox")
+            span.checkmark
+        label.dark50.checkbox-label Можно пригласить гостей (до 10 человек)
+            input(type="checkbox")
+            span.checkmark
+
+mixin date-dropdown(filter=false)
+    if (filter)
+        input.date-picker
+    else
+        input.filter-date-picker
+
+mixin exp-checkbox(title)
+    .exp-checkbox
+        h3.dark100 #{title} <i class='material-icons'>expand_more</i>
+        .exp-content
+            each item in ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]
+                label.dark50.checkbox-label #{item}
+                    input(type="checkbox")
+                    span.checkmark
+
+mixin rich-checkbox(title)
+    .rich-checkbox
+        h3.dark100= title
+        label.dark50.checkbox-label Широкий коридор
+            input(type="checkbox")
+            span.checkmark
+            p Ширина коридоров в номере не менее 91 см.
+        label.dark50.checkbox-label Помощник для инвалидов
+            input(type="checkbox")
+            span.checkmark
+            p На 1 этаже вас встретит специалист и проводит до номера.
+
+mixin list(title)
+    .bullet-list
+        h3.dark100= title
+        li Нельзя с питомцами
+        li Без вечеринок и мероприятий
+        li Время прибытия — после 13:00, а выезд до 12:00
+
+mixin button(color, text)
+    button(class=`click-${color}`)
+        span= text
+
+#inputs
+    .elem-col
+        h3.dark100 Text field
+        h3.dark50 default
+        input(type="email" placeholder='Email')
+        h3.dark100 dropdown
+        h3.dark50 default
+        +dropdown(true)
         h3.dark100 masked text field
         h3.dark50 default
         input(type='text' placeholder='ДД.ММ.ГГГГ' spellcheck='false').masked-input.dark75
         h3.dark100 date dropdown
-        input.date-picker
+        +date-dropdown
         h3.dark100 filter date dropdown
-        input.filter-date-picker
+        +date-dropdown(true)
         h3.dark100 subscription text field
         +input-email
+        h3.dark100 dropdown
+        +dropdown(false)
     .elem-col
         h3.dark100 checkbox buttons
-        #checkbox
-            label.dark50.checkbox-label Можно курить
-                input(type="checkbox")
-                span.checkmark
-            label.dark50.checkbox-label Можно с питомцами
-                input(type="checkbox")
-                span.checkmark
-            label.dark50.checkbox-label Можно пригласить гостей (до 10 человек)
-                input(type="checkbox")
-                span.checkmark
+        +checkbox
         h3.dark100 radio buttons
         #radio
             label.dark50.checkbox-label Мужчина
@@ -81,25 +151,20 @@ mixin input-email
         h3.dark100 buttons
         #buttons
             div
-                button.click-purple
-                    span click me
-                button(disabled).click-purple
-                    span click me
-                button.click-white
-                    span click me
-                button(disabled).click-white
-                    span click me
+                +button('purple', 'click me')
+                +button('white', 'click me')
             div
                 span.click-span click me
                 span.click-span.click-span-grey click me
-            button.payment
-                span перейти к оплате
-                i.material-icons arrow_forward
+            +arrow-button("перейти к оплате")
         h3.dark100 pagination
         #pagination
             .jq-pagination
             p.dark75 1 – 12 из 100+ вариантов аренды
 #dropdowns
+    +exp-checkbox('expandable checkbox list')
+    +rich-checkbox('rich checkbox buttons')
+    +list('bullet list')
 #review
     .features.dark75
         div
