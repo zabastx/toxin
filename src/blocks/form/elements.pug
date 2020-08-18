@@ -3,14 +3,14 @@ mixin input-email
         input(type="email", name="sub", placeholder='Email', required)
         input(type="submit", value='arrow_forward')
 
-mixin arrow-button(text)
-    button.payment
+mixin arrow-button(text, type="button")
+    button.payment(type=`${type}`)
         span #{text}
 
 mixin dropdown(guests)
     if (guests)
         .guest-dropdown 
-            button.dark75 Сколько гостей
+            button.dark75(type="button") Сколько гостей
             .gdrop-content.dark100
                 p Взрослые
                     span
@@ -64,9 +64,9 @@ mixin checkbox
 
 mixin date-dropdown(filter=false)
     if (filter)
-        input.date-picker
-    else
         input.filter-date-picker
+    else
+        input.date-picker
 
 mixin exp-checkbox(title)
     .exp-checkbox
@@ -100,88 +100,18 @@ mixin button(color, text)
     button(class=`click-${color}`)
         span= text
 
-#inputs
-    .elem-col
-        h3.dark100 Text field
-        h3.dark50 default
-        input(type="email" placeholder='Email')
-        h3.dark100 dropdown
-        h3.dark50 default
-        +dropdown(true)
-        h3.dark100 masked text field
-        h3.dark50 default
-        input(type='text' placeholder='ДД.ММ.ГГГГ' spellcheck='false').masked-input.dark75
-        h3.dark100 date dropdown
-        +date-dropdown
-        h3.dark100 filter date dropdown
-        +date-dropdown(true)
-        h3.dark100 subscription text field
-        +input-email
-        h3.dark100 dropdown
-        +dropdown(false)
-    .elem-col
-        h3.dark100 checkbox buttons
-        +checkbox
-        h3.dark100 radio buttons
-        #radio
-            label.dark50.checkbox-label Мужчина
-                input(type="radio" name='gender')
-                span.checkmark
-            label.dark50.checkbox-label Женщина
-                input(type="radio" name='gender')
-                span.checkmark
-        h3.dark100 toggle
-        #toggle
-            label.switch
-                input(type="checkbox")
-                span.togglemark
-            span.dark75 Получать спецпредложения
-        h3.dark100 like button
-        #likes
-            button.like-btn
-                i.mi-icons favorite_border
-                i.like-txt 2
-        h3.dark100 rate button
-        #rating
-            .rating
-    .elem-col
-        h3.dark100 range slider
-        h3.dark50#amount
-        #slider-range
-        h3.dark100 buttons
-        #buttons
-            div
-                +button('purple', 'click me')
-                +button('white', 'click me')
-            div
-                span.click-span click me
-                span.click-span.click-span-grey click me
-            +arrow-button("перейти к оплате")
-        h3.dark100 pagination
-        #pagination
-            .jq-pagination
-            p.dark75 1 – 12 из 100+ вариантов аренды
-#dropdowns
-    +exp-checkbox('expandable checkbox list')
-    +rich-checkbox('rich checkbox buttons')
-    +list('bullet list')
-#review
-    .features.dark75
-        div
-            i.material-icons insert_emoticon
-            b Комфорт
-            p Шумопоглощающие стены
-        hr
-        div
-            i.material-icons location_city
-            b Удобство
-            p Окно в каждой из спален
-        hr
-    .comments.dark75
-        img(src=require('./blocks/form/avatar.png').default alt='user avatar')
-        button.like-btn
-            i.mi-icons favorite_border
-            i.like-txt 11
-        b Мурад Сарафанов
-        span 5 дней назад
-        p Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+mixin gender-pick
+    .radio
+        label.dark50.checkbox-label Мужчина
+            input(type="radio" name='gender' checked)
+            span.checkmark
+        label.dark50.checkbox-label Женщина
+            input(type="radio" name='gender')
+            span.checkmark
+
+mixin toggle
+    .toggle
+        label.switch
+            input(type="checkbox" name='offers')
+            span.togglemark
+        span.dark75 Получать спецпредложения

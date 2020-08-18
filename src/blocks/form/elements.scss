@@ -13,7 +13,7 @@ input[type="submit"] {
     border: none;
 }
 
-input[type="email"], input[type="text"], select, .masked-input {
+input[type="email"], input[type="text"], input[type="password"], select, .masked-input, input {
     background: #fff;
     padding-left: 15px;
     width: 100%;
@@ -131,6 +131,7 @@ input:hover, input:focus {
     width: 100px;
     color: #fff;
     padding: 0 20px;
+    font-family: 'montserrat', sans-serif;
     &:hover {
         opacity: 0.5;
     }
@@ -143,11 +144,17 @@ input:hover, input:focus {
     border-radius: 22px;
     width: 100px;
     padding: 2px;
+    font-family: 'montserrat', sans-serif;
     span {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background: #fff;
+        background-clip: border-box;
         border-radius: 20px;
-        padding: 13px 1em;
+        font-size: 12px;
+        line-height: 15px;
+        height: 100%;
     }
     &:hover {
         background: linear-gradient(180deg, #BC9CFF77 0%, #8BA4F977 100%);
@@ -222,11 +229,25 @@ button {
     }
 }
 
+.checkbox, .exp-checkbox {
+    .checkbox-label {
+        margin-bottom: 10px;
+    }
+}
+
+.radio {
+    label {
+        line-height: 24px;
+    }
+    .checkmark {
+        margin: 2px 0;
+    }
+}
+
 .checkbox-label {
     display: block;
     position: relative;
     padding-left: 35px;
-    margin-bottom: 10px;
     cursor: pointer;
     font-size: 14px;
     line-height: 18px;
@@ -285,12 +306,14 @@ button {
     }
 }
 
-.checkbox, #radio, #toggle, #likes, #rating, #pagination, #buttons {
-    margin-top: 16px;
-    margin-bottom: 40px;
+.elem-col {
+    .checkbox, .radio, .toggle, #likes, #rating, #pagination, #buttons {
+        margin-top: 16px;
+        margin-bottom: 40px;
+    }
 }
 
-#radio {
+.radio {
     display: flex;
     label {
         width: 50%;
@@ -315,6 +338,7 @@ button {
     display: inline-block;
     width: 40px;
     height: 20px;
+    margin: 2px 0;
     &:hover .togglemark {
         border: 1px solid #BC9CFF;
     }
@@ -369,7 +393,7 @@ button {
     border: 1px solid #BC9CFF;
   }
 
-  #toggle {
+  .toggle {
       display: flex;
   }
 
@@ -403,7 +427,7 @@ button[class="like-btn"] {
     }
 }
 
-.rating, .features .material-icons {
+.rating, .features .material-icons, .room-rate {
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -412,6 +436,8 @@ button[class="like-btn"] {
 
 .rating {
     cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
 #review {

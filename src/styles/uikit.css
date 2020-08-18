@@ -10,16 +10,13 @@ body {
     margin: 140px 0;
 }
 
-nav {
+#headers-footers footer, #headers-footers nav {
+    margin: 0 auto;
     margin-bottom: 40px;
-}
-
-footer {
-    margin: 0 auto 40px;
 }
 
 #elements {
     display: flex;
     flex-direction: column;
-    margin: 0 140px;
+    margin: 140px;
 }

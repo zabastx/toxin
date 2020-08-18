@@ -1,0 +1,78 @@
+extends ../layout
+
+block title
+    title Cards
+
+block header
+
+block content
+    #cards
+        .room-picker
+            h1 Найдём номера под ваши пожелания
+            .dates
+                div
+                    h3 Прибытие
+                    +date-dropdown
+                div
+                    h3 Выезд
+                    +date-dropdown
+            h3 Гости
+            +dropdown(true)
+            +arrow-button('Подобрать номер')
+        .booking
+            h1 <i>№</i> 888 
+                span люкс
+            p <b>9 990₽</b> в сутки
+            form
+                .dates
+                    div
+                        h3 Прибытие
+                        +date-dropdown
+                    div
+                        h3 Выезд
+                        +date-dropdown
+                h3 Гости
+                +dropdown(true)
+                .cost-grid
+                    p <span id='cost'></span> x <span id='days'></span> суток
+                    p#sum
+                    p Сбор за услуги: скидка 2 179₽
+                    p <i>i</i>0₽
+                    p Сбор за дополнительные услуги 
+                    p <i>i</i>300₽
+                .cost-sum
+                    h2 Итого
+                    div
+                    h2#final-cost 38 012₽
+                +arrow-button('забронировать', 'submit')
+        .registration
+            h1 Регистрация аккаунта
+            form
+                input(type="text" name="firstname" placeholder='Имя' required)
+                input(type="text" name="lastname" placeholder='Фамилия' required)
+                +gender-pick
+                h3 дата рождения
+                input(type='text' placeholder='ДД.ММ.ГГГГ' spellcheck='false').masked-input.dark75
+                h3 данные для входа в сервис
+                input(type="email" placeholder='Email' required)
+                input(type="password" placeholder='Пароль' required)
+                +toggle
+                +arrow-button('Перейти к оплате', 'submit')
+            .reg-suggest
+                span Нет аккаунта на Toxin?
+                a(href="login.html")
+                    +button('white', 'Создать')
+        .login
+            h1 Войти
+            form
+                input(type="email" placeholder='Email' required)
+                input(type="password" placeholder='Пароль' required)
+                +arrow-button('Войти', 'submit')
+            .reg-suggest
+                span Нет аккаунта на Toxin?
+                a(href="login.html")
+                    +button('white', 'Создать')
+        +room-thumb(888, 9990, 5, 145, true)
+        +room-thumb(840, 9900, 4, 65)
+            
+block footer

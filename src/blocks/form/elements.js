@@ -1,6 +1,3 @@
-import './elements.scss'
-import './datepicker.scss'
-
 require('moment')
 require('./daterangepicker')
 require('./jq-star')
@@ -289,7 +286,9 @@ $('.date-picker').mask("99.99.9999")
 // JQuery date range picker
 
 const formatMonth = () => {
+  try {
   $('.filter-date-picker').val($('.filter-date-picker').val().split('.').join(''))
+  } catch(e) {}
 }
 
 $('.date-picker').daterangepicker(dateConfig)
