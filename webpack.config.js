@@ -1,14 +1,32 @@
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const path = require('path');
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path')
+const fs = require('fs')
+
+const genPugPages = dir => {
+  const templateFiles = fs.readdirSync(path.resolve(__dirname, dir))
+  return templateFiles.map(item => {
+    const parts = item.split('.')
+    const name = parts[0]
+    const extension = parts[1]
+    return new HtmlWebpackPlugin({
+      filename: `${name}.html`,
+      template: path.resolve(__dirname, `${dir}/${name}.${extension}`),
+      chunks: ['uikit', 'styles']
+    })
+  })
+}
+
+const pugPages = genPugPages('./src/uikit')
 
 const config = {
   context: path.resolve(__dirname, 'src'),
   entry: {
     index: './js/index.js',
-    uikit: './js/uikit.js'
+    uikit: './js/uikit.js',
+    styles: './js/styles.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -33,14 +51,11 @@ const config = {
       filename: 'styles/[name].css'
     }),
     new HtmlWebpackPlugin({
-      template: './index.pug'
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'uikit.html',
-      template: './uikit.pug'
+      template: './index.pug',
+      chunks: ['index', 'styles']
     }),
     new CleanWebpackPlugin()
-  ],
+  ].concat(pugPages),
   module: {
     rules: [
       {
@@ -62,6 +77,8 @@ const config = {
         loader: 'file-loader',
         options: {
           name: 'img/[name].[ext]',
+          useRelativePath: true,
+          esModule: false
         }
       },
       {
