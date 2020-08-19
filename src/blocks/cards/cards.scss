@@ -130,6 +130,9 @@
 .dates {
     display: flex;
     justify-content: space-between;
+    .filter-date-picker {
+        width: 150px;
+    }
 }
 
 .reg-suggest {

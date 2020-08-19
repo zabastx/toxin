@@ -10,12 +10,12 @@ block content
         .room-picker
             h1 Найдём номера под ваши пожелания
             .dates
-                div
+                .arrival
                     h3 Прибытие
-                    +date-dropdown
-                div
+                    +date-dropdown(true)
+                .departion
                     h3 Выезд
-                    +date-dropdown
+                    +date-dropdown(true)
             h3 Гости
             +dropdown(true)
             +arrow-button('Подобрать номер')
@@ -25,12 +25,12 @@ block content
             p <b>9 990₽</b> в сутки
             form
                 .dates
-                    div
+                    .arrival
                         h3 Прибытие
-                        +date-dropdown
-                    div
+                        +date-dropdown(true)
+                    .departion
                         h3 Выезд
-                        +date-dropdown
+                        +date-dropdown(true)
                 h3 Гости
                 +dropdown(true)
                 .cost-grid

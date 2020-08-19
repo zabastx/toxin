@@ -1,3 +1,6 @@
+import './img/avatar.png'
+import './img/expand_more.png'
+
 require('moment')
 require('./daterangepicker')
 require('./jq-star')
@@ -287,7 +290,7 @@ $('.date-picker').mask("99.99.9999")
 
 const formatMonth = () => {
   try {
-  $('.filter-date-picker').val($('.filter-date-picker').val().split('.').join(''))
+  $('.elem-col .filter-date-picker').val($('.elem-col .filter-date-picker').val().split('.').join(''))
   } catch(e) {}
 }
 
