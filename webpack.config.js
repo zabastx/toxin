@@ -25,6 +25,7 @@ const config = {
   context: path.resolve(__dirname, 'src'),
   entry: {
     index: './js/index.js',
+    sign: './js/sign.js',
     uikit: './js/uikit.js',
     styles: './js/styles.js',
   },
@@ -54,6 +55,16 @@ const config = {
       template: './index.pug',
       chunks: ['index', 'styles']
     }),
+    new HtmlWebpackPlugin({
+      filename: 'login.html',
+      template: './login.pug',
+      chunks: ['sign', 'styles']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'registration.html',
+      template: './registration.pug',
+      chunks: ['sign', 'styles']
+    }),    
     new CleanWebpackPlugin()
   ].concat(pugPages),
   module: {

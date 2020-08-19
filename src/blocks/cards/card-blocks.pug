@@ -83,9 +83,9 @@ mixin registration
             +toggle
             +arrow-button('Перейти к оплате', 'submit')
         .reg-suggest
-            span Нет аккаунта на Toxin?
+            span Уже есть аккаунт на Toxin
             a(href="login.html")
-                +button('white', 'Создать')
+                +button('white', 'Войти')
 
 mixin login
     .login
@@ -96,5 +96,5 @@ mixin login
             +arrow-button('Войти', 'submit')
         .reg-suggest
             span Нет аккаунта на Toxin?
-            a(href="login.html")
+            a(href="registration.html")
                 +button('white', 'Создать')

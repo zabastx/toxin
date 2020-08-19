@@ -14,5 +14,7 @@ mixin header(type)
             if type
                 p Юлий Цезарь
             else
-                button#login Войти
-                button#reg Зарегистрироваться
+                a(href="login.html")
+                    button#login Войти
+                a(href="registration.html")
+                    button#reg Зарегистрироваться
