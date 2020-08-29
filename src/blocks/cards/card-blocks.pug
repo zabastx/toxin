@@ -34,7 +34,8 @@ mixin room-picker
                 +date-dropdown(true)
         h3 Гости
         +dropdown(true)
-        +arrow-button('Подобрать номер')
+        a(href="search.html")
+            +arrow-button('Подобрать номер')
 
 mixin booking(number, cost, luxe=false)
     .booking

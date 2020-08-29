@@ -11,6 +11,7 @@ input[type="submit"] {
     margin: 0;
     background-color: #fff;
     border: none;
+    padding: 0;
 }
 
 input[type="email"], input[type="text"], input[type="password"], select, .masked-input, input {
@@ -216,6 +217,7 @@ button {
     border: none;
     font-family: 'montserrat', sans-serif;
     display: flex;
+    align-items: center;
     &::after {
         content: '\e5c8';
         font-family: 'material icons';
@@ -407,7 +409,7 @@ button[class="like-btn"] {
     border-radius: 10px;
     color: rgba(31, 32, 65, 0.25);
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     transition-duration: .4s;
     box-sizing: border-box;
     .mi-icons {
@@ -420,6 +422,7 @@ button[class="like-btn"] {
         vertical-align: middle;
     }
     .like-txt {
+        font-family: 'montserrat', sans-serif;
         font-size: 10px;
         line-height: 12px;
         font-style: normal;
@@ -436,6 +439,7 @@ button[class="like-btn"] {
 
 .rating {
     cursor: pointer;
+    user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
 }
@@ -477,12 +481,15 @@ button[class="like-btn"] {
     }
     hr {
         margin: 20px 0;
+        border: none;
         border-top: 1px solid rgba(31, 32, 65, 0.1);
     }
 }
 
 .px-paginate-container{
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 .px-paginate-container.px-left{
     float: left;
@@ -663,6 +670,8 @@ button[class="like-btn"] {
     h3 {
         margin-bottom: 15px;
         user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
     }
     i {
         margin-left: 30px;

@@ -1,9 +1,14 @@
+body {
+    margin: 0;
+}
+
 main {
     background-image: url('../img/sign-bg.png');
     background-size: cover;
     background-repeat: no-repeat;
+    border: 1px solid #ffff;
     .login {
-        margin: 9% auto;
+        margin: 10% auto;
     }
     .registration {
         margin: 20px auto;

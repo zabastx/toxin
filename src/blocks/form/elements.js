@@ -1,6 +1,9 @@
 import './img/avatar.png'
 import './img/expand_more.png'
 
+import './datepicker.scss'
+import './elements.scss'
+
 require('moment')
 require('./daterangepicker')
 require('./jq-star')
@@ -295,9 +298,9 @@ const formatMonth = () => {
 }
 
 $('.date-picker').daterangepicker(dateConfig)
-$('.filter-date-picker').daterangepicker(filterDateConfig)
+$('.elem-col .filter-date-picker').daterangepicker(filterDateConfig)
 formatMonth()
-$('.filter-date-picker').change(formatMonth)
+$('.elem-col .filter-date-picker').change(formatMonth)
 $('.date-picker').val('ДД.ММ.ГГГГ')
 
 

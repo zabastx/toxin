@@ -1,0 +1,37 @@
+extends layout
+block title
+    title Room details
+block content
+    main
+        .room-images
+            img(src="img/details-1.png" alt="image 1" id='img1')
+            img(src="img/details-2.png" alt="image 2")
+            img(src="img/details-3.png" alt="image 3")
+        .details
+            .room-details
+                .features
+                    h2 Сведения о номере
+                    +room-feat('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены')
+                    hr
+                    +room-feat('location_city', 'Удобство', 'Окно в каждой из спален')
+                    hr
+                    +room-feat('whatshot', 'Удобство', 'Окно в каждой из спален')
+                .votes
+                    h2 Впечатления от номера
+                    include ./img/pie.svg
+                    ul.chart-list.dark75
+                        li <i id='orange-icon'></i> Великолепно
+                        li <i id='green-icon'></i> Хорошо
+                        li <i id='purple-icon'></i> Удовлетворительно
+                        li <i id='black-icon'></i> Разочарован
+                .reviews
+                    #review-title
+                        h2 Отзывы посетителей номера
+                        h3.dark50 2 отзыва
+                    +comments('avatar', 11, 'Мурад Сарафанов', '5 дней назад', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
+                    +comments('avatar2', 2, 'Патрисия Стёклышкова', 'неделю назад', 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент')
+                +list('Правила', 'h2')
+                .cancel.dark75
+                    h2 Отмена
+                    p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+            +booking(888, 9990)

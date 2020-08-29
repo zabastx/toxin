@@ -1,0 +1,38 @@
+@media (max-width: 1290px) {
+    .room-details {
+        width: 100%;
+    }
+    .details {
+        display: flex;
+        flex-direction: column;
+    }
+    .booking {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 1160px) {
+    .details {
+        padding: 5% 10%;
+    }
+}
+
+@media (max-width: 800px) {
+    .votes {
+        svg {
+            margin: auto;
+            display: block;
+        }
+        .chart-list {
+            margin: 10px auto 0;
+            display: block;
+            width: max-content;
+        }
+    }
+    .details {
+        padding: 3% 6%;
+    }
+    .booking {
+        margin: 20px auto 0;
+    }
+}

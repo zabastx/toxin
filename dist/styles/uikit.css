@@ -1,0 +1,2 @@
+body{display:flex;flex-direction:column;background:#f4f4f6;margin:0;font-family:'montserrat', sans-serif}body>img{position:absolute;top:30px;left:30px}#headers-footers{margin:140px 0}#headers-footers footer,#headers-footers nav{margin:0 auto;margin-bottom:40px}#elements{display:flex;flex-direction:column;margin:140px}
+

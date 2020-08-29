@@ -89,9 +89,9 @@ mixin rich-checkbox(title)
             span.checkmark
             p На 1 этаже вас встретит специалист и проводит до номера.
 
-mixin list(title)
+mixin list(title, tag='h3')
     .bullet-list
-        h3.dark100= title
+        #{tag}.dark100= title
         li Нельзя с питомцами
         li Без вечеринок и мероприятий
         li Время прибытия — после 13:00, а выезд до 12:00
@@ -115,3 +115,20 @@ mixin toggle
             input(type="checkbox" name='offers')
             span.togglemark
         span.dark75 Получать спецпредложения
+
+mixin room-feat(icon, title, text)
+    div
+        i.material-icons= icon
+        b= title
+        p.dark50= text
+
+mixin comments(avatar, likes, name, date, text)
+    .comments.dark75
+        img(src=`img/${avatar}.png` alt='user avatar')
+        button.like-btn
+            i.mi-icons favorite_border
+            i.like-txt= likes
+        b= name
+        span= date
+        p= text
+

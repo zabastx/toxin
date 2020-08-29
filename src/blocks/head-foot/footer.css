@@ -35,13 +35,12 @@ footer {
 }
 
 footer #upper {
-    height: 372px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding-right: 140px;
-    padding-left: 140px;
+    padding: 100px 140px;
     color: rgba(31, 32, 65, 0.5);
+    flex-wrap: wrap;
 }
 
 .footer-block {
@@ -50,10 +49,6 @@ footer #upper {
 
 .footer-block p {
     margin-top: 20px;
-}
-
-.footer-block, .footer-list {
-    margin-top: 100px;
 }
 
 #upper h3 {
@@ -71,8 +66,53 @@ footer #upper {
     margin-left: 0;
 }   
 
-.footer-block, .footer-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+@media (max-width: 1024px) {
+    footer #upper {
+        padding: 50px 70px;
+    }
+    footer #upper > div {
+        margin-bottom: 20px;
+    }
+    .true #lower {
+        padding: 0 70px;
+    }
+}
+
+@media (max-width: 734px) {
+    footer #upper {
+        padding: 25px 35px;
+    }
+    footer #upper > div {
+        margin-bottom: 20px;
+    }
+    .true #lower {
+        padding: 0 35px;
+    }
+}
+
+@media (max-width: 472px) {
+    .footer-block {
+        width: 100%;
+    }
+    footer {
+        text-align: center;
+    }
+}
+
+@media (max-width: 450px) {
+    footer #upper {
+        padding: 10px 15px;
+    }
+    footer #upper > div {
+        margin-bottom: 10px;
+    }
+    .footer-block p {
+        margin-top: 10px;
+    }
+    .true #lower {
+        padding: 0 15px;
+    }
+    #upper li {
+        margin-top: 10px;
+    }
 }

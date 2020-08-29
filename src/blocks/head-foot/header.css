@@ -1,63 +1,144 @@
-nav li {
-    display: inline;
-    margin-left: 10px;
-  }
+body {
+  font-family: 'montserrat', sans-serif;
+}
+
+nav ul > li {
+  display: inline;
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+
+nav img {
+  vertical-align: middle;
+}
   
+nav {
+  font-family: 'montserrat';
+  background: #fff;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(31, 32, 65, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 140px;
+  height: 70px;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+}
+
+#menu {
+  display: flex;
+  align-items: center;
+}
+
+#menu > ul {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+#menu ul .material-icons {
+  line-height: 21px;
+}
+
+#menu button {
+  height: 34px;
+}
+
+#menu a {
+  margin-left: 20px;
+}
+
+#login {
+  width: 87px;
+  background: #fff;
+  border: solid;
+  color: #BC9CFF;
+}
+
+#login:hover {
+  border-color: #BC9CFF77;
+}
+
+#reg {
+  border: none;
+  width: 196px;
+  color: #fff;
+  background: linear-gradient(180deg, #BC9CFF, #8BA4F9);
+}
+
+#reg:hover {
+  opacity: 0.5;
+}
+
+#logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+nav b {
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.exp-menu {
+  display: none;
+  position: relative;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.exp-menu ul {
+  position: absolute;
+  top: 20px;
+  right: 5px;
+  text-align: right;
+  display: none;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  line-height: 24px;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-radius: 0 0 5px 5px;
+  border-top: none;
+  box-shadow: 0 5px 5px rgba(31, 32, 65, 0.5);
+}
+
+.exp-menu li {
+  display: block;
+  margin: 0;
+  line-height: inherit;
+  padding: 0 5px;
+}
+
+.exp-menu li:hover {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+
+@media (max-width: 1180px) {
+  .exp-menu {
+    display: block;
+  }
+  .exp-menu:hover ul {
+    display: block;
+  }
+  #menu > ul {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
   nav {
-    font-family: 'montserrat';
-    background: #fff;
-    font-size: 14px;
-    color: rgba(31, 32, 65, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 140px;
-    height: 70px;
-    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    padding: 0 70px;
   }
-  
-  #menu {
-    display: flex;
-    align-items: center;
+  #menu ul {
+    gap: 10px;
   }
+}
 
-  #menu p {
-    margin-left: 41px;
+@media (max-width: 734px) {
+  nav {
+      padding: 0 35px;
   }
-
-  #menu button {
-    margin-left: 20px;
-    height: 34px;
-  }
-  
-  #login {
-    width: 87px;
-    background: #fff;
-    border: solid;
-    color: #BC9CFF;
-  }
-
-  #login:hover {
-    border-color: #BC9CFF77;
-  }
-  
-  #reg {
-    border: none;
-    width: 196px;
-    color: #fff;
-    background: linear-gradient(180deg, #BC9CFF, #8BA4F9);
-  }
-
-  #reg:hover {
-    opacity: 0.5;
-  }
-
-  #logo {
-    display: inline-flex;
-    align-items: center;
-  }
-
-  nav b {
-    color: rgba(31, 32, 65, 0.75);
-  }
+}

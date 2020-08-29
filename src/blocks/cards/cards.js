@@ -9,16 +9,6 @@ try {
 
 require('slick-carousel')
 
-const Masonry = require('masonry-layout')
-
-const elem = document.querySelector('#cards')
-const msnry = new Masonry( elem, {
-  itemSelector: '#cards > div',
-  columnWidth: 1,
-  gutter: 40,
-  transitionDuration: '300ms',
-});
-
 $('.thumbnail').slick({
     dots: true
 })
@@ -96,7 +86,7 @@ const formatRoomDate = e => {
       elem.val(elem.val().split('').slice(0, 10).join(''))
     }
     const date = $(e.delegateTarget).val().split('')
-    if (e.target.offsetParent.className === 'room-picker') {
+    if (e.target.parentElement.parentElement.parentElement.className === 'room-picker') {
       $('.room-picker .arrival .filter-date-picker').val(date.slice(0, 10).join(''))
       $('.room-picker .departion .filter-date-picker').val(date.slice(11).join(''))
     }
@@ -108,6 +98,7 @@ const formatRoomDate = e => {
   } catch(error) {}
 }
 
-$('.filter-date-picker').daterangepicker(dateCfg)
+$('.booking .filter-date-picker').daterangepicker(dateCfg)
+$('.room-picker .filter-date-picker').daterangepicker(dateCfg)
 $('.filter-date-picker').change(formatRoomDate)
 formatRoomDate()

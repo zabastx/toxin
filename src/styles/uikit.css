@@ -6,6 +6,12 @@ body {
     font-family: 'montserrat', sans-serif;
 }
 
+body > img {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
 #headers-footers {
     margin: 140px 0;
 }

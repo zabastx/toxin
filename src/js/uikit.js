@@ -1,3 +1,15 @@
+import '../styles/uikit.css'
+
+const Masonry = require('masonry-layout')
+
+const elem = document.querySelector('#cards')
+const msnry = new Masonry( elem, {
+  itemSelector: '#cards > div',
+  columnWidth: 1,
+  gutter: 40,
+  transitionDuration: '300ms',
+});
+
 // input hover
 
 const focus = (e) => {$(e.delegateTarget.previousSibling).text('hover / focus')}

@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+}
+
+main {
+    background-image: url('../img/land-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 70px 140px 20px;
+    p {
+        font-size: 14px;
+        line-height: 24px;
+        color: rgba(31, 32, 65, 0.75);
+        text-align: right;
+        margin: 30% 0 0 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    main {
+        padding: 35px 70px 20px;
+        p {
+            margin: 20% 0 0 0;
+        }
+    }
+}
+
+@media (max-width: 734px) {
+    main {
+        padding: 15px 35px 10px;
+        p {
+            margin: 10% 0 0 0;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    main {
+        padding: 10px 0 0 0;
+        align-items: center;
+        p {
+            margin: 10px 0 0 0;
+        }
+    }
+}
+
+@media (max-width: 380px) {
+    main {
+        padding: 10px 0 0;
+    }
+}
