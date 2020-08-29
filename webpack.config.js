@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path')
 const fs = require('fs')
 
@@ -28,6 +29,8 @@ const config = {
     sign: './js/sign.js',
     uikit: './js/uikit.js',
     styles: './js/styles.js',
+    details: './js/details.js',
+    search: './js/search.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -64,7 +67,22 @@ const config = {
       filename: 'registration.html',
       template: './registration.pug',
       chunks: ['sign', 'styles']
-    }),    
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'details.html',
+      template: './details.pug',
+      chunks: ['styles', 'details']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'search.html',
+      template: './search.pug',
+      chunks: ['search', 'styles']
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: './copy'},
+      ],
+    }),
     new CleanWebpackPlugin()
   ].concat(pugPages),
   module: {
