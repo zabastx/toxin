@@ -27,8 +27,8 @@ let sum = dailyCost*days
 let finalCost = sum - 2179 + 300
 
 const daysChange = () => {
-  let str1 = $('.booking .arrival .filter-date-picker').val().split('')
-  let str2 = $('.booking .departion .filter-date-picker').val().split('')
+  let str1 = $('.booking .arrival .filter2-date-picker').val().split('')
+  let str2 = $('.booking .departion .filter2-date-picker').val().split('')
   str1.splice(3, 0, str1.splice(0, 3).join(''))
   str2.splice(3, 0, str2.splice(0, 3).join(''))
   const date1 = new Date(str1.join(''))
@@ -82,23 +82,22 @@ const dateCfg = {
 const formatRoomDate = e => {
   try {
     if (!e) {
-      const elem = $('.filter-date-picker')
+      const elem = $('.filter2-date-picker')
       elem.val(elem.val().split('').slice(0, 10).join(''))
     }
     const date = $(e.delegateTarget).val().split('')
     if (e.target.parentElement.parentElement.parentElement.className === 'room-picker') {
-      $('.room-picker .arrival .filter-date-picker').val(date.slice(0, 10).join(''))
-      $('.room-picker .departion .filter-date-picker').val(date.slice(11).join(''))
+      $('.room-picker .arrival .filter2-date-picker').val(date.slice(0, 10).join(''))
+      $('.room-picker .departion .filter2-date-picker').val(date.slice(11).join(''))
     }
     else {
-      $('.booking .arrival .filter-date-picker').val(date.slice(0, 10).join(''))
-      $('.booking .departion .filter-date-picker').val(date.slice(11).join(''))
+      $('.booking .arrival .filter2-date-picker').val(date.slice(0, 10).join(''))
+      $('.booking .departion .filter2-date-picker').val(date.slice(11).join(''))
       daysChange()
     }
   } catch(error) {}
 }
 
-$('.booking .filter-date-picker').daterangepicker(dateCfg)
-$('.room-picker .filter-date-picker').daterangepicker(dateCfg)
-$('.filter-date-picker').change(formatRoomDate)
+$('.filter2-date-picker').daterangepicker(dateCfg)
+$('.filter2-date-picker').change(formatRoomDate)
 formatRoomDate()

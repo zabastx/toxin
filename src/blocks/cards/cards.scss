@@ -135,7 +135,7 @@
 .dates {
     display: flex;
     justify-content: space-between;
-    .filter-date-picker {
+    .filter2-date-picker {
         width: 150px;
     }
 }
@@ -168,6 +168,7 @@
     box-sizing: border-box;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    z-index: 0;
     .thumbnail {
         div {
             background-size: cover;

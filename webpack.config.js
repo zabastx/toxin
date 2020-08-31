@@ -76,7 +76,7 @@ const config = {
     new HtmlWebpackPlugin({
       filename: 'search.html',
       template: './search.pug',
-      chunks: ['search', 'styles']
+      chunks: ['styles', 'search']
     }),
     new CopyPlugin({
       patterns: [

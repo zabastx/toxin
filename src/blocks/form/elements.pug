@@ -1,7 +1,7 @@
 mixin input-email
     form.submit-email
-        input(type="email", name="sub", placeholder='Email', required)
-        input(type="submit", value='arrow_forward')
+        input(type="email", name="sub", placeholder="Email", required)
+        input(type="submit", value="arrow_forward")
 
 mixin arrow-button(text, type="button")
     button.payment(type=`${type}`)
@@ -51,6 +51,7 @@ mixin dropdown(guests)
                             button.plus +
 
 mixin checkbox
+    h3 checkbox buttons
     .checkbox
         label.dark50.checkbox-label Можно курить
             input(type="checkbox")
@@ -63,14 +64,16 @@ mixin checkbox
             span.checkmark
 
 mixin date-dropdown(filter=false)
-    if (filter)
+    if (filter === 1)
         input.filter-date-picker
+    else if (filter === 2)
+        input.filter2-date-picker
     else
         input.date-picker
 
 mixin exp-checkbox(title)
     .exp-checkbox
-        h3.dark100 #{title} <i class='material-icons'>expand_more</i>
+        h3.dark100 #{title} <i class="material-icons">expand_more</i>
         .exp-content
             each item in ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]
                 label.dark50.checkbox-label #{item}
@@ -89,7 +92,7 @@ mixin rich-checkbox(title)
             span.checkmark
             p На 1 этаже вас встретит специалист и проводит до номера.
 
-mixin list(title, tag='h3')
+mixin list(title, tag="h3")
     .bullet-list
         #{tag}.dark100= title
         li Нельзя с питомцами
@@ -103,16 +106,16 @@ mixin button(color, text)
 mixin gender-pick
     .radio
         label.dark50.checkbox-label Мужчина
-            input(type="radio" name='gender' checked)
+            input(type="radio" name="gender" checked)
             span.checkmark
         label.dark50.checkbox-label Женщина
-            input(type="radio" name='gender')
+            input(type="radio" name="gender")
             span.checkmark
 
 mixin toggle
     .toggle
         label.switch
-            input(type="checkbox" name='offers')
+            input(type="checkbox" name="offers")
             span.togglemark
         span.dark75 Получать спецпредложения
 
@@ -124,11 +127,16 @@ mixin room-feat(icon, title, text)
 
 mixin comments(avatar, likes, name, date, text)
     .comments.dark75
-        img(src=`img/${avatar}.png` alt='user avatar')
+        img(src=`img/${avatar}.png` alt="user avatar")
         button.like-btn
             i.mi-icons favorite_border
             i.like-txt= likes
         b= name
         span= date
         p= text
+
+mixin range-slider
+    h3.dark100 range slider
+    h3.dark50#amount
+    #slider-range
 

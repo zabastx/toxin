@@ -1,4 +1,4 @@
-.date-picker, .filter-date-picker {
+.date-picker, .filter-date-picker, .filter2-date-picker {
   display: block;
   width: 150px;
   box-sizing: border-box;
@@ -17,7 +17,7 @@
   background-position-x: calc(100% - 11px);
 }
 
-.filter-date-picker {
+.filter-date-picker, .filter2-date-picker {
   width: 260px;
 }
 

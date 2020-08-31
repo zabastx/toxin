@@ -10,23 +10,22 @@ block content
             .elem-col
                 h3.dark100 Text field
                 h3.dark50 default
-                input(type="email" placeholder='Email')
+                input(type="email" placeholder="Email")
                 h3.dark100 dropdown
                 h3.dark50 default
                 +dropdown(true)
                 h3.dark100 masked text field
                 h3.dark50 default
-                input(type='text' placeholder='ДД.ММ.ГГГГ' spellcheck='false').masked-input.dark75
+                input(type="text" placeholder="ДД.ММ.ГГГГ" spellcheck="false").masked-input.dark75
                 h3.dark100 date dropdown
                 +date-dropdown
                 h3.dark100 filter date dropdown
-                +date-dropdown(true)
+                +date-dropdown(1)
                 h3.dark100 subscription text field
                 +input-email
                 h3.dark100 dropdown
                 +dropdown(false)
             .elem-col
-                h3.dark100 checkbox buttons
                 +checkbox
                 h3.dark100 radio buttons
                 +gender-pick
@@ -41,14 +40,12 @@ block content
                 #rating
                     .rating
             .elem-col
-                h3.dark100 range slider
-                h3.dark50#amount
-                #slider-range
+                +range-slider
                 h3.dark100 buttons
                 #buttons
                     div
-                        +button('purple', 'click me')
-                        +button('white', 'click me')
+                        +button("purple", "click me")
+                        +button("white", "click me")
                     div
                         span.click-span click me
                         span.click-span.click-span-grey click me
@@ -58,15 +55,15 @@ block content
                     .jq-pagination
                     p.dark75 1 – 12 из 100+ вариантов аренды
         #dropdowns
-            +exp-checkbox('expandable checkbox list')
-            +rich-checkbox('rich checkbox buttons')
-            +list('bullet list')
+            +exp-checkbox("expandable checkbox list")
+            +rich-checkbox("rich checkbox buttons")
+            +list("bullet list")
         #review
             .features.dark75
-                +room-feat('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены')
+                +room-feat("insert_emoticon", "Комфорт", "Шумопоглощающие стены")
                 hr
-                +room-feat('location_city', 'Удобство', 'Окно в каждой из спален')
+                +room-feat("location_city", "Удобство", "Окно в каждой из спален")
                 hr
-            +comments('avatar', 11, 'Мурад Сарафанов', '5 дней назад', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
+            +comments("avatar", 11, "Мурад Сарафанов", "5 дней назад", "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
             
 block footer

@@ -89,7 +89,8 @@ const paginConfig = {
   maxBtnCount: 3,
   firstLastBtnShow: false,
   prevPageName:'arrow_back',
-  nextPageName:'arrow_forward'
+  nextPageName:'arrow_forward',
+  align: 'center'
 }
 
 // jQuery UI slider
@@ -293,14 +294,14 @@ $('.date-picker').mask("99.99.9999")
 
 const formatMonth = () => {
   try {
-  $('.elem-col .filter-date-picker').val($('.elem-col .filter-date-picker').val().split('.').join(''))
+  $('.filter-date-picker').val($('.filter-date-picker').val().split('.').join(''))
   } catch(e) {}
 }
 
 $('.date-picker').daterangepicker(dateConfig)
-$('.elem-col .filter-date-picker').daterangepicker(filterDateConfig)
+$('.filter-date-picker').daterangepicker(filterDateConfig)
 formatMonth()
-$('.elem-col .filter-date-picker').change(formatMonth)
+$('.filter-date-picker').change(formatMonth)
 $('.date-picker').val('ДД.ММ.ГГГГ')
 
 

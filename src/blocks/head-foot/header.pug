@@ -1,7 +1,7 @@
 mixin header(type)
     nav
         #logo
-            a(href="/")
+            a(href="./")
                 img(src='img/logo.png' alt="logo")
         #menu
             ul
@@ -15,6 +15,10 @@ mixin header(type)
             .exp-menu Меню
                 span.material-icons keyboard_arrow_down
                 ul
+                    li.li-sign
+                        a(href="login.html") Войти
+                    li.li-sign
+                        a(href="registration.html") Зарегистрироваться
                     li О нас
                     li Услуги
                     li Вакансии
@@ -23,7 +27,7 @@ mixin header(type)
             if type
                 p Юлий Цезарь
             else
-                a(href="login.html")
+                a(href="login.html").sign-button
                     button#login Войти
-                a(href="registration.html")
+                a(href="registration.html").sign-button
                     button#reg Зарегистрироваться

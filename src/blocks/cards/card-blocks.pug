@@ -28,14 +28,14 @@ mixin room-picker
         .dates
             .arrival
                 h3 Прибытие
-                +date-dropdown(true)
+                +date-dropdown(2)
             .departion
                 h3 Выезд
-                +date-dropdown(true)
+                +date-dropdown(2)
         h3 Гости
         +dropdown(true)
         a(href="search.html")
-            +arrow-button('Подобрать номер')
+            +arrow-button("Подобрать номер")
 
 mixin booking(number, cost, luxe=false)
     .booking
@@ -50,14 +50,14 @@ mixin booking(number, cost, luxe=false)
             .dates
                 .arrival
                     h3 Прибытие
-                    +date-dropdown(true)
+                    +date-dropdown(2)
                 .departion
                     h3 Выезд
-                    +date-dropdown(true)
+                    +date-dropdown(2)
             h3 Гости
             +dropdown(true)
             .cost-grid
-                p <span id='cost'></span> x <span id='days'></span> суток
+                p <span id="cost"></span> x <span id="days"></span> суток
                 p#sum
                 p Сбор за услуги: скидка 2 179₽
                 p <i>i</i>0₽
@@ -67,35 +67,35 @@ mixin booking(number, cost, luxe=false)
                 h2 Итого
                 div
                 h2#final-cost
-            +arrow-button('забронировать', 'submit')
+            +arrow-button("забронировать", "submit")
 
 mixin registration
     .registration
         h1 Регистрация аккаунта
         form
-            input(type="text" name="firstname" placeholder='Имя' required)
-            input(type="text" name="lastname" placeholder='Фамилия' required)
+            input(type="text" name="firstname" placeholder="Имя" required)
+            input(type="text" name="lastname" placeholder="Фамилия" required)
             +gender-pick
             h3 дата рождения
-            input(type='text' placeholder='ДД.ММ.ГГГГ' spellcheck='false').masked-input.dark75
+            input(type="text" placeholder="ДД.ММ.ГГГГ" spellcheck="false").masked-input.dark75
             h3 данные для входа в сервис
-            input(type="email" placeholder='Email' required)
-            input(type="password" placeholder='Пароль' required)
+            input(type="email" placeholder="Email" required)
+            input(type="password" placeholder="Пароль" required)
             +toggle
-            +arrow-button('Перейти к оплате', 'submit')
+            +arrow-button("Перейти к оплате", "submit")
         .reg-suggest
             span Уже есть аккаунт на Toxin
             a(href="login.html")
-                +button('white', 'Войти')
+                +button("white", "Войти")
 
 mixin login
     .login
         h1 Войти
         form
-            input(type="email" placeholder='Email' required)
-            input(type="password" placeholder='Пароль' required)
-            +arrow-button('Войти', 'submit')
+            input(type="email" placeholder="Email" required)
+            input(type="password" placeholder="Пароль" required)
+            +arrow-button("Войти", "submit")
         .reg-suggest
             span Нет аккаунта на Toxin?
             a(href="registration.html")
-                +button('white', 'Создать')
+                +button("white", "Создать")

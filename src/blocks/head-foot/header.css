@@ -13,7 +13,6 @@ nav img {
 }
   
 nav {
-  font-family: 'montserrat';
   background: #fff;
   font-size: 14px;
   line-height: 17px;
@@ -24,11 +23,13 @@ nav {
   padding: 0 140px;
   height: 70px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  z-index: 3;
 }
 
 #menu {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 #menu > ul {
@@ -45,10 +46,13 @@ nav {
 
 #menu button {
   height: 34px;
+  font-family: inherit;
 }
 
 #menu a {
   margin-left: 20px;
+  text-decoration: none;
+  color: inherit;
 }
 
 #login {
@@ -87,6 +91,7 @@ nav b {
   position: relative;
   -moz-user-select: none;
   -webkit-user-select: none;
+  z-index: 2;
 }
 
 .exp-menu ul {
@@ -108,12 +113,17 @@ nav b {
 .exp-menu li {
   display: block;
   margin: 0;
-  line-height: inherit;
+  line-height: 30px;
   padding: 0 5px;
+}
+
+.exp-menu a {
+  margin: 0;
 }
 
 .exp-menu li:hover {
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  color: #fff;
 }
 
 @media (max-width: 1180px) {
@@ -140,5 +150,14 @@ nav b {
 @media (max-width: 734px) {
   nav {
       padding: 0 35px;
+  }
+  .sign-button {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  nav {
+    padding: 0 15px;
   }
 }
