@@ -3,3 +3,25 @@ block title
     title Search Room
 block content
     main
+        aside
+            h3 даты пребывания в отеле
+            +date-dropdown(1)
+            h3 гости
+            +dropdown(true)
+            .rng-slide
+                +range-slider
+            span.pagin-text Стоимость за сутки пребывания в номере
+            +checkbox
+            +rich-checkbox("доступность")
+            h3 удобства номера
+            +dropdown(false)
+            +exp-checkbox("дополнительные удобства")
+            +button("purple", "закрыть")
+        section
+            h1 Номера, которые мы для вас подобрали
+            .rooms
+                each item in roomArr
+                    +room-thumb(item.number, item.cost, item.rate, item.reviews, item.luxe)
+            .jq-pagination
+            p.dark75 1 – 12 из 100+ вариантов аренды
+        .expand-search.material-icons arrow_forward
